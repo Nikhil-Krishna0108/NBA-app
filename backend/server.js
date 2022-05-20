@@ -29,10 +29,12 @@ mongoose.connection.on('error', (err) => {
 });
 
 const exercisesRouter = require('./routes/exercises');
+const c11Router = require('./routes/c11');
 
 
 app.get('/', exercise_controllers.list_exercises);
 app.use('/exercises', exercisesRouter);
+app.use('/c11', c11Router);
 
 
 app.listen(port, () => {

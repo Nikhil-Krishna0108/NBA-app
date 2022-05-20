@@ -12,6 +12,7 @@ import CreateUser from './components/create-user.component';
 import Criteria1 from './components/criteria1.component';
 import c11List from './components/c1-1.component';
 import c12List from './components/c1-2.component';
+import CreateC11 from './components/createc11.component';
 
 
 function App() {
@@ -23,9 +24,11 @@ function App() {
 				<Route path="/" exact component={ExercisesList} />
 				<Route path="/edit/:id" component={EditExercise} />
 				<Route path="/create" component={CreateExercise} />
+				<Route path="/c11/create" component={CreateC11} />
 				{/* <Route path="/create/exercise" component={()=><UpdateForm route={"exercise"}/>} /> */}
 			
 				<Route path="/criteria1" component={Criteria1} />
+				{/* <Route path="/criteria2" component={Criteria2} /> */}
 			</div>
 		</Router>
 	);
