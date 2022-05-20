@@ -17,7 +17,7 @@ const C11 = props => (
     <td>{props.c11.M4}</td>
     <td>{props.c11.M5}</td>
     <td>
-      <Link to={"/edit/" + props.c11._id}>
+      <Link to={"/c11/edit/" + props.c11._id}>
         <button
           type="button"
           className="btn btn-primary btn-sm">
