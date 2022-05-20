@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
-const c11 = new Schema(
+const c11 =new mongoose.Schema(
 	{
 		vis: { type: String, required: true },
 		M1: { type: String, required: true },
@@ -16,6 +16,6 @@ const c11 = new Schema(
 	}
 );
 
-const Vision = mongoose.model('c11', c11Schema);
+const Vision = mongoose.model('c11', c11);
 
-module.exports = c11;
+module.exports = Vision;

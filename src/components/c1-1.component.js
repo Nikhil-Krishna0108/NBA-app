@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 
-const c11 = props => (
+const C11 = props => (
   
   <tr>
     <td rowSpan={2}>{props.c11.Vision}</td>
@@ -60,7 +60,7 @@ export default class C11List extends Component {
   // pass in 3 props
   c11List() {
     return this.state.c11.map(currentc11 => {
-      return <c11 c11={currentc11} deletec11={this.deletec11} key={currentc11._id} />
+      return <C11 c11={currentc11} deletec11={this.deletec11} key={currentc11._id} />
     })
     // return this.state.exercises.map(currentexercise => {
       // return (<>
@@ -117,7 +117,7 @@ export default class C11List extends Component {
             {this.c11List()}
           </tbody>
         </table>
-        <Link to={"/create"}>
+        <Link to={"/c11/create"}>
         <button
           type="button"
           className="nav-link">

@@ -26,21 +26,21 @@ export default class CreateExercise extends Component {
   // set state of users array
   // map users to database usernames
   // set username to first username in database
-  componentDidMount() {
-    axios.get('http://localhost:5000/users/')
-      .then(response => {
-        if (response.data.length > 0) {
-          this.setState({
-            users: response.data.map(user => user.username),
-            username: response.data[0].username
-          })
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+  // componentDidMount() {
+  //   axios.get('http://localhost:5000/users/')
+  //     .then(response => {
+  //       if (response.data.length > 0) {
+  //         this.setState({
+  //           users: response.data.map(user => user.username),
+  //           username: response.data[0].username
+  //         })
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     })
 
-  }
+  // }
 
   // set value of username element to value of text box 
   onChangeUsername(e) {

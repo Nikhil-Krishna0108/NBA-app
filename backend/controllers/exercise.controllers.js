@@ -25,13 +25,17 @@ exports.list_exercises = async (req, res) => {
 
 
 exports.add_table_row = async (Modal,req, res) => {
+	console.log('add_table_row function');
 		try {
 			const newTableRow = new Modal(req.body);
 			newTableRow
 			.save()
 			.then(() => res.json('Exercise added!'))
-			.catch((err) => res.status(400).json('Error: ' + err));
+			.catch((err) => {
+				console.log("pre db error")
+				return res.status(400).json('Error: ' + err)});
 		} catch (err) {
+			console.log("db error")
 			console.log(err);
 			res.status(500).json({ message: err.message });
 		}
