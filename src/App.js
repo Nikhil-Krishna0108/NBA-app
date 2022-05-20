@@ -13,6 +13,7 @@ import Criteria1 from './components/criteria1.component';
 import c11List from './components/c1-1.component';
 import c12List from './components/c1-2.component';
 import CreateC11 from './components/createc11.component';
+import EditC11 from './components/edit11.component';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 				<Route path="/edit/:id" component={EditExercise} />
 				<Route path="/create" component={CreateExercise} />
 				<Route path="/c11/create" component={CreateC11} />
+				<Route path="/c11/edit" component={EditC11} />
 				{/* <Route path="/create/exercise" component={()=><UpdateForm route={"exercise"}/>} /> */}
 			
 				<Route path="/criteria1" component={Criteria1} />
