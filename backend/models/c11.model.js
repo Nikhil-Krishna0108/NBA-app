@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const visionSchema = new Schema(
+const c11 = new Schema(
 	{
 		vis: { type: String, required: true },
 		M1: { type: String, required: true },
@@ -16,6 +16,6 @@ const visionSchema = new Schema(
 	}
 );
 
-const Vision = mongoose.model('Vision', visionSchema);
+const Vision = mongoose.model('c11', c11Schema);
 
-module.exports = Vision;
+module.exports = c11;
