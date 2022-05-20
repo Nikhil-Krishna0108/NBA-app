@@ -101,11 +101,10 @@ export default class EditExercise extends Component {
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Username: </label>
-            <select ref="userInput"
-              required
+            <input type="text"
               className="form-control"
               value={this.state.username}
-              onChange={this.onChangeUsername}>
+              onChange={this.onChangeUsername}/>
               {
                 this.state.users.map(function (user) {
                   return <option
@@ -114,7 +113,7 @@ export default class EditExercise extends Component {
                   </option>;
                 })
               }
-            </select>
+         
           </div>
           <div className="form-group">
             <label>Description: </label>

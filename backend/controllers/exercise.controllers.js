@@ -90,9 +90,17 @@ exports.delete_exercise = async (req, res) => {
 		res.status(500).json({ message: err.message });
 	}
 };
+exports.delete_table_row = async (Modal,req, res) => {
+	try {
+		Modal.findByIdAndDelete(req.params.id)
+			.then(() => res.json('Exercise deleted'))
+			.catch((err) => res.status(400).json('Error: ' + err));
+	} catch (err) {
+		//res.status(500).json({ message: err.message });
+	}
+};
 
-// UPDATE exercise from database using object id
-exports.update_exercise = async (req, res) => {
+exports.update_exercise= async (req, res) => {
 	try {
 		Exercise.findById(req.params.id)
 			.then((exercise) => {
@@ -107,6 +115,24 @@ exports.update_exercise = async (req, res) => {
 			})
 			.catch((err) => res.status(400).json('Error: ' + err));
 	} catch (err) {
+		res.status(500).json({ message: err.message });
+	}
+};
+
+// UPDATE exercise from database using object id
+exports.update_table_row= async (Modal,req, res) => {
+	try {
+		Modal.findById(req.params.id)
+			.then((table_row) => {
+				table_row={...table_row,...req.body};
+				table_row
+					.save()
+					.then(() => res.json('Exercise Updated!'))
+					.catch((err) => res.status(400).json('Error: ' + err));
+			})
+			.catch((err) => res.status(400).json('Error: ' + err));
+	} catch (err) {
+		console.log(err)
 		res.status(500).json({ message: err.message });
 	}
 };
