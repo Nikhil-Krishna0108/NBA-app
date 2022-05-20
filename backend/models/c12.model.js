@@ -14,6 +14,6 @@ const c12 = new Schema(
 	}
 );
 
-const C12= mongoose.model('c12', c12);
+const C12 = mongoose.model('c12', c11Schema);
 
 module.exports = C12;
