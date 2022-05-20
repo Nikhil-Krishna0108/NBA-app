@@ -7,20 +7,15 @@ export default class CreateC21 extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangevision = this.onChangevision.bind(this);
-    this.onChangeM1 = this.onChangeM1.bind(this);
-    this.onChangeM2 = this.onChangeM2.bind(this);
-    this.onChangeM3 = this.onChangeM3.bind(this);
-    this.onChangeM4 = this.onChangeM4.bind(this);
-    this.onChangeM5 = this.onChangeM5.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onChangeProgramStructure = this.onChangeProgramStructure.bind(this);
+    this.onChangeAICTE = this.onChangeAICTE.bind(this);
+    this.onChangeVTU = this.onChangeVTU.bind(this);
+ 
 
     this.state = {
-      username: '',
-      description: '',
-      duration: 0,
-      date: new Date(),
-      users: []
+      ProgramStructure: '',
+      AICTE: '',
+      VTU: '',
     }
   }
 
@@ -45,38 +40,24 @@ export default class CreateC21 extends Component {
 //   }
 
   // set value of username element to value of text box 
-  onChangevision(e) {
+  onChangeProgramStructure(e) {
     this.setState({
-      u: e.target.value
+      ProgramStructure: e.target.value
     })
   }
 
   // set value of description element to value of text box 
-  onChangeM1(e) {
+  onChangeAICTE(e) {
     this.setState({
-      description: e.target.value
+      AICTE: e.target.value
     })
   }
-  onChangeM2(e) {
+  onChangeVTU(e) {
     this.setState({
-      description: e.target.value
+      VTU: e.target.value
     })
   }
-  onChangeM3(e) {
-    this.setState({
-      description: e.target.value
-    })
-  }
-  onChangeM4(e) {
-    this.setState({
-      description: e.target.value
-    })
-  }
-  onChangeM5(e) {
-    this.setState({
-      description: e.target.value
-    })
-  }
+
 
 
 
@@ -88,21 +69,18 @@ export default class CreateC21 extends Component {
     e.preventDefault();
 
     const c21 = {
-      vision: this.state.vision,
-      M1: this.state.M1,
-      M2: this.state.M2,
-      M3: this.state.M3,
-      M4: this.state.M4,
-      M5: this.state.M5,
+      ProgramStructure: this.state.ProgramStructure,
+      AICTE: this.state.AICTE,
+      VTU: this.state.VTU,
     }
 
-    console.log(c11);
+    console.log(c21);
 
-    axios.post('http://localhost:5000/c11/add', c11)
+    axios.post('http://localhost:5000/c21/add', c21)
       .then(res => console.log(res.data));
       
 
-    window.location = '/';
+    window.location = '/criteria2';
   }
 
   render() {
@@ -111,11 +89,11 @@ export default class CreateC21 extends Component {
         <h3>Add vission and mission</h3>
         <form onSubmit={this.onSubmit}>
            <div className="form-group">
-            <label>Vision</label>
+            <label>Program Structure</label>
             <input type="text"
               className="form-control"
-              value={this.state.vision}
-              onChange={this.onChangevision}
+              value={this.state.ProgramStructure}
+              onChange={this.onChangeProgramStructure}
               />
               {/* {
                 this.state.users.map(function (user) {
@@ -128,50 +106,23 @@ export default class CreateC21 extends Component {
             
           </div> 
           <div className="form-group">
-            <label>M1</label>
+            <label>AICTE</label>
             <input type="text"
-              required
               className="form-control"
-              value={this.state.M1}
-              onChange={this.onChangeM1}
+              value={this.state.AICTE}
+              onChange={this.onChangeAICTE}
             />
           </div>
           <div className="form-group">
-            <label>M2</label>
+            <label>VTU</label>
             <input
               type="text"
               className="form-control"
-              value={this.state.M2}
-              onChange={this.onChangeM2}
+              value={this.state.VTU}
+              onChange={this.onChangeVTU}
             />
           </div>
-          <div className="form-group">
-            <label>M3</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.M3}
-              onChange={this.onChangeM3}
-            />
-          </div>
-          <div className="form-group">
-            <label>M4</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.M4}
-              onChange={this.onChangeM4}
-            />
-          </div>
-          <div className="form-group">
-            <label>M5</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.M5}
-              onChange={this.onChangeM5}
-            />
-          </div>
+
 
 
           <div className="form-group">

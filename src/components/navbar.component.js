@@ -16,7 +16,7 @@ export default class Navbar extends Component {
               <Link to="/criteria1" className="criteria1">Criteria1</Link>
             </li>
             <li className="navbar-item">
-              <Link to="/user" className="nav-link">Criteria 2</Link>
+              <Link to="/criteria2" className="nav-link">Criteria 2</Link>
             </li>
             <li className="navbar-item">
               <Link to="/user" className="nav-link">Criteria 3</Link>

@@ -16,6 +16,6 @@ const c11 =new mongoose.Schema(
 	}
 );
 
-const C11 = mongoose.model('c11', c11);
+const Vision = mongoose.model('c11', c11);
 
-module.exports = C11;
+module.exports = Vision;
