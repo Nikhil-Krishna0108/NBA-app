@@ -1,37 +1,33 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import Navbar from "./navbar.component";
 
 // Exercise component, props (exercise, delete component and key) are passed in
-const Exercise = props => (
-  
+const Exercise = (props) => (
   <tr>
-    <td >{props.exercise.username}</td>
+    <td>{props.exercise.username}</td>
     <td>{props.exercise.description}</td>
     <td>{props.exercise.duration}</td>
     <td>{props.exercise.date.substring(0, 10)}</td>
     <td>
       <Link to={"/edit/" + props.exercise._id}>
-        <button
-          type="button"
-          className="btn btn-primary btn-sm">
+        <button type="button" className="btn btn-primary btn-sm">
           Edit
         </button>
-      </Link>
-      {" "}
+      </Link>{" "}
       <button
-        onClick={() => { props.deleteOneExercise(props.exercise._id)}}
-        className="btn btn-danger btn-sm">
+        onClick={() => {
+          props.deleteOneExercise(props.exercise._id);
+        }}
+        className="btn btn-danger btn-sm"
+      >
         Delete
       </button>
-      
     </td>
   </tr>
-  
-  
-)
+);
 export default class ExercisesList extends Component {
-
   constructor(props) {
     super(props);
 
@@ -40,42 +36,50 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/exercises/')
-      .then(response => {
-        this.setState({ exercises: response.data })
+    axios
+      .get("http://localhost:5000/exercises/")
+      .then((response) => {
+        this.setState({ exercises: response.data });
       })
       .catch((error) => {
         console.log(error);
-      })
+      });
   }
-
 
   // For every element in the exercise array return an Exercise component
   // pass in 3 props
   exerciseList() {
-    return this.state.exercises.map(currentexercise => {
-      return <Exercise exercise={currentexercise} deleteOneExercise={this.deleteExercise} key={currentexercise._id} />
-    })
+    return this.state.exercises.map((currentexercise) => {
+      return (
+        <Exercise
+          exercise={currentexercise}
+          deleteOneExercise={this.deleteExercise}
+          key={currentexercise._id}
+        />
+      );
+    });
     // return this.state.exercises.map(currentexercise => {
-      // return (<>
-      // <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id} />
-      // </>)
+    // return (<>
+    // <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id} />
+    // </>)
     // })
   }
 
   // use axios delete and filter array so database elements not matching the chosen id are kept
   deleteExercise(id) {
-    axios.delete('http://localhost:5000/exercises/' + id)
-      .then(res => console.log(res.data));
+    axios
+      .delete("http://localhost:5000/exercises/" + id)
+      .then((res) => console.log(res.data));
     this.setState({
-      exercises: this.state.exercises.filter(el => el._id !== id)
-    })
+      exercises: this.state.exercises.filter((el) => el._id !== id),
+    });
   }
 
   // show a table with 5 columns
   render() {
     return (
       <div>
+        <Navbar />
         <h3>List of users and exercises</h3>
         <table className="table">
           <thead className="thead-light">
@@ -87,38 +91,12 @@ export default class ExercisesList extends Component {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            {this.exerciseList()}
-          </tbody>
+          <tbody>{this.exerciseList()}</tbody>
         </table>
         <Link to={"/create"}>
-        <button
-          type="button"
-          className="nav-link">
-          Add new row
-        </button>
-      </Link>
-      <h3>List of users and exercises</h3>
-        <table className="table">
-          <thead className="thead-light">
-            <tr>
-              <th>Use</th>
-              <th>Exercis</th>
-              <th>Duratio</th>
-              <th>Dat</th>
-              <th>Actio</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.exerciseList()}
-          </tbody>
-        </table>
-        <Link to={"/create"}>
-        <button
-          type="button"
-          className="nav-link">
-          Add new row
-        </button>
+          <button type="button" className="nav-link">
+            Add new row
+          </button>
         </Link>
         <h3>List of users and exercises</h3>
         <table className="table">
@@ -131,16 +109,12 @@ export default class ExercisesList extends Component {
               <th>Actio</th>
             </tr>
           </thead>
-          <tbody>
-            {this.exerciseList()}
-          </tbody>
+          <tbody>{this.exerciseList()}</tbody>
         </table>
         <Link to={"/create"}>
-        <button
-          type="button"
-          className="nav-link">
-          Add new row
-        </button>
+          <button type="button" className="nav-link">
+            Add new row
+          </button>
         </Link>
         <h3>List of users and exercises</h3>
         <table className="table">
@@ -153,23 +127,32 @@ export default class ExercisesList extends Component {
               <th>Actio</th>
             </tr>
           </thead>
-          <tbody>
-            {this.exerciseList()}
-          </tbody>
+          <tbody>{this.exerciseList()}</tbody>
         </table>
         <Link to={"/create"}>
-        <button
-          type="button"
-          className="nav-link">
-          Add new row
-        </button>
+          <button type="button" className="nav-link">
+            Add new row
+          </button>
         </Link>
-
-
+        <h3>List of users and exercises</h3>
+        <table className="table">
+          <thead className="thead-light">
+            <tr>
+              <th>Use</th>
+              <th>Exercis</th>
+              <th>Duratio</th>
+              <th>Dat</th>
+              <th>Actio</th>
+            </tr>
+          </thead>
+          <tbody>{this.exerciseList()}</tbody>
+        </table>
+        <Link to={"/create"}>
+          <button type="button" className="nav-link">
+            Add new row
+          </button>
+        </Link>
       </div>
-      
-
-    )
-
+    );
   }
 }

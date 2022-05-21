@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import DatePicker from 'react-datepicker';
+import React, { Component } from "react";
+import axios from "axios";
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default class CreateC11 extends Component {
@@ -16,71 +16,68 @@ export default class CreateC11 extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      vis: '',
-      M1: '',
-      M2: '',
-      M3: '',
-      M4: '',
-      M5: '',
-
-    }
+      vis: "",
+      M1: "",
+      M2: "",
+      M3: "",
+      M4: "",
+      M5: "",
+    };
   }
 
   // React lifecycle method, called before displaying page
   // set state of users array
   // map users to database usernames
   // set username to first username in database
-//   componentDidMount() {
-//     axios.get('http://localhost:5000/users/')
-//       .then(response => {
-//         if (response.data.length > 0) {
-//           this.setState({
-//             users: response.data.map(user => user.username),
-//             username: response.data[0].username
-//           })
-//         }
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       })
+  //   componentDidMount() {
+  //     axios.get('http://localhost:5000/users/')
+  //       .then(response => {
+  //         if (response.data.length > 0) {
+  //           this.setState({
+  //             users: response.data.map(user => user.username),
+  //             username: response.data[0].username
+  //           })
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       })
 
-//   }
+  //   }
 
-  // set value of username element to value of text box 
+  // set value of username element to value of text box
   onChangevision(e) {
     this.setState({
-      vis: e.target.value
-    })
+      vis: e.target.value,
+    });
   }
 
-  // set value of description element to value of text box 
+  // set value of description element to value of text box
   onChangeM1(e) {
     this.setState({
-      M1: e.target.value
-    })
+      M1: e.target.value,
+    });
   }
   onChangeM2(e) {
     this.setState({
-      M2: e.target.value
-    })
+      M2: e.target.value,
+    });
   }
   onChangeM3(e) {
     this.setState({
-      M3: e.target.value
-    })
+      M3: e.target.value,
+    });
   }
   onChangeM4(e) {
     this.setState({
-      M4: e.target.value
-    })
+      M4: e.target.value,
+    });
   }
   onChangeM5(e) {
     this.setState({
-      M5: e.target.value
-    })
+      M5: e.target.value,
+    });
   }
-
-
 
   // prevent default form submit method from occuring
   // create an object variable called exercise
@@ -96,30 +93,31 @@ export default class CreateC11 extends Component {
       M3: this.state.M3,
       M4: this.state.M4,
       M5: this.state.M5,
-    }
+    };
 
     console.log(c11);
 
-    axios.post('http://localhost:5000/c11/add', c11)
-      .then(res => console.log(res.data));
-      
+    axios
+      .post("http://localhost:5000/c11/add", c11)
+      .then((res) => console.log(res.data));
 
-    window.location = '/criteria1';
+    window.location = "/criteria1";
   }
 
   render() {
     return (
-      <div>
-        <h3>Add vission and mission</h3>
+      <div className="col px-2 my-2">
+        <h3>Add vision and mission</h3>
         <form onSubmit={this.onSubmit}>
-           <div className="form-group">
+          <div className="form-group">
             <label>Vision</label>
-            <input type="text"
+            <input
+              type="text"
               className="form-control"
               value={this.state.vis}
               onChange={this.onChangevision}
-              />
-              {/* {
+            />
+            {/* {
                 this.state.users.map(function (user) {
                   return <option
                     key={user}
@@ -127,11 +125,11 @@ export default class CreateC11 extends Component {
                   </option>;
                 })
               } */}
-            
-          </div> 
+          </div>
           <div className="form-group">
             <label>M1</label>
-            <input type="text"
+            <input
+              type="text"
               required
               className="form-control"
               value={this.state.M1}
@@ -175,12 +173,11 @@ export default class CreateC11 extends Component {
             />
           </div>
 
-
           <div className="form-group">
             <input type="submit" value="Submit" className="btn btn-primary" />
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
