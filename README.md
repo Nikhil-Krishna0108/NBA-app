@@ -5,6 +5,9 @@ Db structure :
 	
 	Year(range) :
 		criteria :
+			{
+				Data field : value(s)
+			}
 			{ table 1 : 
 				{ 1 : value(s),
 				  2 : value(s),
