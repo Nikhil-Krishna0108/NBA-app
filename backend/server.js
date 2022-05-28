@@ -1,13 +1,13 @@
 const express = require('express')
 const app = express()
-const Mongoconnection = require('./db')
+const mongoconnection = require('./db')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 const cors = require('cors')
 app.use(cors())
 
-Mongoconnection();
+mongoconnection();
 
 app.listen(5000, ()=>{
     console.log(`Successfully served on port: 5000`);
