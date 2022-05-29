@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,Component,useEffect} from "react";
 import axios from "axios";
 import MaterialTable from "material-table";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
+
 
 function C11table() {
   const [tableData, setTableData] = useState([]);
@@ -21,7 +22,32 @@ function C11table() {
     { title: "M4", field: "M4", filterPlaceholder: "filter" },
     { title: "M5", field: "M5", filterPlaceholder: "filter" },
   ];
+  // axios
+  // .get("http://localhost:5000/criteria1/")
+  // .then((response) => {
+  //   this.setState({ tableData: response.data });
+  //   console.log(tableData);
+  // })
+  // .catch((error) => {
+  //   console.log(error);
+  // });
+  function getEvents() {
+
+    axios.get("http://localhost:5000/criteria1/")
+        .then(response => response.data)
+        .then((data) => {
+            setTableData(data)
+         
+        });
+}
+useEffect(()=>{
+    getEvents();
+  },[])
+
+
+  
   return (
+    
     <div className="App">
       <h1 align="center">React-App</h1>
       <h4 align="center">Crash Course on Material Table </h4>
@@ -40,13 +66,22 @@ function C11table() {
               setTimeout(() => resolve(), 500);
             }),
           onRowUpdate: (newRow, oldRow) =>
-            new Promise((resolve, reject) => {
+          {
+            console.log({newRow,oldRow});
+            return new Promise((resolve, reject) => {
+              
               const updatedData = [...tableData];
+            
               updatedData[oldRow.tableData.id] = newRow;
+             
               setTableData(updatedData);
+              
               setTimeout(() => resolve(), 500);
-              axios.post("http://localhost:5000/criteria1/update", newRow);
-            }),
+              
+
+              axios.post(`http://localhost:5000/criteria1/update/${oldRow.tableData.id}`, newRow);
+            })},
+          
           onRowDelete: (selectedRow) =>
             new Promise((resolve, reject) => {
               const updatedData = [...tableData];
