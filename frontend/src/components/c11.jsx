@@ -37,6 +37,7 @@ function C11table() {
         .then(response => response.data)
         .then((data) => {
             setTableData(data)
+            console.log({tableData})
          
         });
 }
@@ -77,9 +78,14 @@ useEffect(()=>{
               setTableData(updatedData);
               
               setTimeout(() => resolve(), 500);
+              var id=oldRow["_id"];
+              console.log(oldRow._id);
+              console.log({newRow});
+              //console.log(id);
+              // console.log({tableData.id});
               
 
-              axios.post(`http://localhost:5000/criteria1/update/${oldRow.tableData.id}`, newRow);
+              axios.post(`http://localhost:5000/criteria1/update/${oldRow._id}`, newRow);
             })},
           
           onRowDelete: (selectedRow) =>
@@ -88,10 +94,8 @@ useEffect(()=>{
               updatedData.splice(selectedRow.tableData.id, 1);
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
-              axios.post(
-                "http://localhost:5000/criteria1/delete/:",
-                selectedRow.tableData.id
-              );
+
+              axios.delete(`http://localhost:5000/criteria1/delete/${selectedRow._id}`);
             }),
         }}
         actions={[
