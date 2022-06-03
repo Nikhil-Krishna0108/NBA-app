@@ -5,7 +5,7 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
 
 
-function C11table() {
+function C12table() {
   const [tableData, setTableData] = useState([]);
   const columns = [
 
@@ -139,4 +139,4 @@ useEffect(()=>{
   );
 }
 
-export default C11table;
+export default C12table;
