@@ -9,12 +9,11 @@ function C12table() {
   const [tableData, setTableData] = useState([]);
   const columns = [
 
-    { title: "Vision", field: "vis", filterPlaceholder: "filter" },
-    { title: "M1", field: "M1", filterPlaceholder: "filter" },
-    { title: "M2", field: "M2", filterPlaceholder: "filter" },
-    { title: "M3", field: "M3", filterPlaceholder: "filter" },
-    { title: "M4", field: "M4", filterPlaceholder: "filter" },
-    { title: "M5", field: "M5", filterPlaceholder: "filter" },
+    { title: "Peo", field: "Peo", filterPlaceholder: "filter" },
+    { title: "Mission", field: "Mission", filterPlaceholder: "filter" },
+    { title: "Correlation", field: "Correlation", filterPlaceholder: "filter" },
+    { title: "Justification", field: "Justification", filterPlaceholder: "filter" },
+
   ];
   // axios
   // .get("http://localhost:5000/criteria1/")
@@ -27,7 +26,7 @@ function C12table() {
   // });
   function getEvents() {
 
-    axios.get("http://localhost:5000/criteria1/")
+    axios.get("http://localhost:5000/criteria1/c12")
         .then(response => response.data)
         .then((data) => {
             setTableData(data)
@@ -55,7 +54,7 @@ useEffect(()=>{
             new Promise((resolve, reject) => {
               setTableData([...tableData, newRow]);
               axios
-                .post("http://localhost:5000/criteria1/add", newRow)
+                .post("http://localhost:5000/criteria1/c12/add", newRow)
                 .then((res) => console.log(res.data));
 
               setTimeout(() => resolve(), 500);
@@ -79,7 +78,7 @@ useEffect(()=>{
               // console.log({tableData.id});
               
 
-              axios.post(`http://localhost:5000/criteria1/update/${oldRow._id}`, newRow);
+              axios.post(`http://localhost:5000/criteria1/c12/update/${oldRow._id}`, newRow);
             })},
           
           onRowDelete: (selectedRow) =>
@@ -89,7 +88,7 @@ useEffect(()=>{
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
 
-              axios.delete(`http://localhost:5000/criteria1/delete/${selectedRow._id}`);
+              axios.delete(`http://localhost:5000/criteria1/c12/delete/${selectedRow._id}`);
             }),
         }}
         actions={[

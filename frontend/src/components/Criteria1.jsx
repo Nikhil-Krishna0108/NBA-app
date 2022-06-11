@@ -8,7 +8,6 @@ export const Criteria1 = () => {
 
 <div><C11table/></div>
     <div><C12table/></div>
-    <div><C11table/></div>
       </div>
 
 
