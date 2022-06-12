@@ -47,15 +47,33 @@ exports.delete_table_row = async (Modal,req, res) => {
 
 exports.update_table_row= async (Modal,req, res) => {
 	try {
-		Modal.findById(req.params.id)
-			.then((table_row) => {
-				table_row={...table_row,...req.body};
-				table_row
-					.save()
-					.then(() => res.json('Exercise Updated!'))
-					.catch((err) => res.status(400).json('Error: ' + err));
-			})
-			.catch((err) => res.status(400).json('Error: ' + err));
+	
+		// Modal.findById(req.params.id)
+		// 	.then((table_row) => {
+		// 		console.log({Before:table_row});
+
+		// 		table_row={...table_row,...req.body};
+		// 		console.log({After:table_row});
+				
+		// 		console.log({req});
+		// 		table_row
+		// 			.save()
+		// 			.then(() => res.json('Exercise Updated!'))
+		// 			.catch((err) => res.status(400).json('Error: ' + err));
+		// 	})
+		// 	.catch((err) => res.status(400).json('Error: ' + err));
+		var user_id = req.params.id;
+		var req_body={...req.body};
+		delete req_body._id;
+Modal.findByIdAndUpdate(user_id, req_body,
+                            function (err, docs) {
+    if (err){
+        console.log(err)
+    }
+    else{
+        console.log("Updated User : ", docs);
+    }
+});
 	} catch (err) {
 		console.log(err)
 		res.status(500).json({ message: err.message });

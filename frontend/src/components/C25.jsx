@@ -3,18 +3,27 @@ import axios from "axios";
 import MaterialTable from "material-table";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
+import { Checkbox, MenuItem, Select } from "@material-ui/core";
 
 
-function C11table() {
-  const [tableData, setTableData] = useState([]);
+function C25table() {
+    
+
+  const [tableData, setTableData] = useState([
+
+
+  ]);
+  const [year,setYear]=useState('all')
+  const [filteredData,setFilteredData]=useState(tableData)
+  const [filter, setFilter]=useState(true)
   const columns = [
 
-    { title: "Vision", field: "vis", filterPlaceholder: "filter" },
-    { title: "M1", field: "M1", filterPlaceholder: "filter" },
-    { title: "M2", field: "M2", filterPlaceholder: "filter" },
-    { title: "M3", field: "M3", filterPlaceholder: "filter" },
-    { title: "M4", field: "M4", filterPlaceholder: "filter" },
-    { title: "M5", field: "M5", filterPlaceholder: "filter" },
+    { title: "Activity", field: "activity", filterPlaceholder: "filter", type:"numeric" },
+    { title: "Year", field: "year", filterPlaceholder: "filter" },
+    { title: "Acheivement", field: "acheivement", filterPlaceholder: "filter" },
+    { title: "Relavance of PO's", field: "relavance", filterPlaceholder: "filter" },
+
+    
   ];
   // axios
   // .get("http://localhost:5000/criteria1/")
@@ -27,7 +36,7 @@ function C11table() {
   // });
   function getEvents() {
 
-    axios.get("http://localhost:5000/criteria1/")
+    axios.get("http://localhost:5000/criteria2/c24")
         .then(response => response.data)
         .then((data) => {
             setTableData(data)
@@ -35,27 +44,68 @@ function C11table() {
          
         });
 }
+
 useEffect(()=>{
     getEvents();
   },[])
+  const handleChange=()=>{
+    setFilter(!filter)
+   }
+   useEffect(()=>{
+ setFilteredData(year==='all'?tableData:tableData.filter(dt=>dt.year===year))
+ 
+   },[year])
+ 
 
 
   
   return (
     
     <div className="App">
-      <h1 align="center">React-App</h1>
-      <h4 align="center">Crash Course on Material Table </h4>
+      <h4 align="center">Table 3: CAY (2016-17)</h4>
 
       <MaterialTable
         columns={columns}
-        data={tableData}
+        data={filteredData}
+        // options={{
+            
+        //   }}
+          actions={[
+            {
+                icon: () => <GetAppIcon />,
+                tooltip: "Click me",
+                onClick: (e, data) => console.log(data),
+              icon:()=><Checkbox
+              checked={filter}
+              onChange={handleChange}
+              inputProps={{ 'aria-label': 'primary checkbox' }}
+            />,
+            tooltip:"Hide/Show Filter option",
+            isFreeAction:true
+            },
+            {
+              icon:()=><Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              style={{width:100}}
+              value={year}
+              onChange={(e)=>setYear(e.target.value)}
+            >
+               <MenuItem value={"all"}><em>All</em></MenuItem>
+              <MenuItem value={2019}>2019</MenuItem>
+              <MenuItem value={2020}>2020</MenuItem>
+              <MenuItem value={2021}>2021</MenuItem>
+            </Select>,
+            tooltip:"Filter Year",
+            isFreeAction:true
+            }
+          ]}
         editable={{
           onRowAdd: (newRow) =>
             new Promise((resolve, reject) => {
-              setTableData([...tableData, newRow]);
+              setFilteredData([...tableData, newRow]);
               axios
-                .post("http://localhost:5000/criteria1/add", newRow)
+                .post("http://localhost:5000/criteria2/c24//add", newRow)
                 .then((res) => console.log(res.data));
 
               setTimeout(() => resolve(), 500);
@@ -79,7 +129,7 @@ useEffect(()=>{
               // console.log({tableData.id});
               
 
-              axios.post(`http://localhost:5000/criteria1/update/${oldRow._id}`, newRow);
+              axios.post(`http://localhost:5000/criteria2/c25/update/${oldRow._id}`, newRow);
             })},
           
           onRowDelete: (selectedRow) =>
@@ -89,19 +139,20 @@ useEffect(()=>{
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
 
-              axios.delete(`http://localhost:5000/criteria1/delete/${selectedRow._id}`);
+              axios.delete(`http://localhost:5000/criteria2/c25/delete/${selectedRow._id}`);
             }),
         }}
-        actions={[
-          {
-            icon: () => <GetAppIcon />,
-            tooltip: "Click me",
-            onClick: (e, data) => console.log(data),
-            // isFreeAction:true
-          },
-        ]}
+        // actions={[
+        //   {
+        //     icon: () => <GetAppIcon />,
+        //     tooltip: "Click me",
+        //     onClick: (e, data) => console.log(data),
+        //     // isFreeAction:true
+        //   },
+        // ]}
         onSelectionChange={(selectedRows) => console.log(selectedRows)}
         options={{
+            filtering:filter,
           sorting: true,
           search: true,
           searchFieldAlignment: "right",
@@ -139,4 +190,4 @@ useEffect(()=>{
   );
 }
 
-export default C11table;
+export default C25table;

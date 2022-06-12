@@ -5,16 +5,27 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
 
 
-function C11table() {
+function C22table() {
   const [tableData, setTableData] = useState([]);
   const columns = [
 
-    { title: "Vision", field: "vis", filterPlaceholder: "filter" },
-    { title: "M1", field: "M1", filterPlaceholder: "filter" },
-    { title: "M2", field: "M2", filterPlaceholder: "filter" },
-    { title: "M3", field: "M3", filterPlaceholder: "filter" },
-    { title: "M4", field: "M4", filterPlaceholder: "filter" },
-    { title: "M5", field: "M5", filterPlaceholder: "filter" },
+    { title: "C", field: "C", filterPlaceholder: "filter" },
+    { title: "Subject", field: "Subject", filterPlaceholder: "filter" },
+    { title: "PO1", field: "PO1", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO2", field: "PO2", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO3", field: "PO3", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO4", field: "PO4", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO5", field: "PO5", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO6", field: "PO6", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO7", field: "PO7", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO8", field: "PO8", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO9", field: "PO9", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO10", field: "PO10", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO11", field: "PO11", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO12", field: "PO12", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PSO1", field: "PSO1", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PSO2", field: "PSO2", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PSO3", field: "PSO3", filterPlaceholder: "filter", type:"boolean"},
   ];
   // axios
   // .get("http://localhost:5000/criteria1/")
@@ -27,7 +38,7 @@ function C11table() {
   // });
   function getEvents() {
 
-    axios.get("http://localhost:5000/criteria1/")
+    axios.get("http://localhost:5000/criteria2/C22")
         .then(response => response.data)
         .then((data) => {
             setTableData(data)
@@ -44,8 +55,7 @@ useEffect(()=>{
   return (
     
     <div className="App">
-      <h1 align="center">React-App</h1>
-      <h4 align="center">Crash Course on Material Table </h4>
+      <h4 align="center">Table 2: Subject to PO/PSO mapping</h4>
 
       <MaterialTable
         columns={columns}
@@ -55,7 +65,7 @@ useEffect(()=>{
             new Promise((resolve, reject) => {
               setTableData([...tableData, newRow]);
               axios
-                .post("http://localhost:5000/criteria1/add", newRow)
+                .post("http://localhost:5000/criteria2/c22//add", newRow)
                 .then((res) => console.log(res.data));
 
               setTimeout(() => resolve(), 500);
@@ -79,7 +89,7 @@ useEffect(()=>{
               // console.log({tableData.id});
               
 
-              axios.post(`http://localhost:5000/criteria1/update/${oldRow._id}`, newRow);
+              axios.post(`http://localhost:5000/criteria2/c22/update/${oldRow._id}`, newRow);
             })},
           
           onRowDelete: (selectedRow) =>
@@ -89,7 +99,7 @@ useEffect(()=>{
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
 
-              axios.delete(`http://localhost:5000/criteria1/delete/${selectedRow._id}`);
+              axios.delete(`http://localhost:5000/criteria2/c22/delete/${selectedRow._id}`);
             }),
         }}
         actions={[
@@ -139,4 +149,4 @@ useEffect(()=>{
   );
 }
 
-export default C11table;
+export default C22table;
