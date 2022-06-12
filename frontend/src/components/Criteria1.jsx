@@ -1,15 +1,18 @@
-import React from 'react'
-import C11table from './C11';
-import C12table from './C12';
+import React from "react";
+import C11table from "./C11";
+import C12table from "./C12";
 
-export const Criteria1 = () => {
+const Criteria1 = () => {
   return (
+    <div>
       <div>
-
-<div><C11table/></div>
-    <div><C12table/></div>
+        <C11table />
       </div>
+      <div>
+        <C12table />
+      </div>
+    </div>
+  );
+};
 
-
-  )
-}
+export default Criteria1;
