@@ -45,7 +45,7 @@ function C11table() {
               updatedData[oldRow.tableData.id] = newRow;
               setTableData(updatedData);
               setTimeout(() => resolve(), 500);
-              axios.post("http://localhost:5000/criteria1/update", newRow);
+              axios.post("http://localhost:5000/criteria1/update/"+oldRow.tableData.id, newRow);
             }),
           onRowDelete: (selectedRow) =>
             new Promise((resolve, reject) => {
