@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }))
 const cors = require('cors')
 app.use(cors())
 
-mongoconnection();
+mongoconnection('2022');
 
 app.listen(5000, ()=>{
     console.log(`Successfully served on port: 5000`);
