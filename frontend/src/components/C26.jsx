@@ -5,16 +5,24 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
 
 
-function C25table() {
+function C26table() {
   const [tableData, setTableData] = useState([]);
   const columns = [
 
-    { title: "Activity", field: "activity", filterPlaceholder: "filter", type:"numeric" },
-    { title: "Year", field: "year", filterPlaceholder: "filter" },
-    { title: "Acheivement", field: "acheivement", filterPlaceholder: "filter" },
-    { title: "Relavance of PO's", field: "relavance", filterPlaceholder: "filter" },
-    
-    
+    { title: "Project title", field: "projectTitle", filterPlaceholder: "filter" },
+    { title: "PO1", field: "PO1", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO2", field: "PO2", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO3", field: "PO3", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO4", field: "PO4", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO5", field: "PO5", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO6", field: "PO6", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO7", field: "PO7", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO8", field: "PO8", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO9", field: "PO9", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO10", field: "PO10", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO11", field: "PO11", filterPlaceholder: "filter", type:"boolean"},
+    { title: "PO12", field: "PO12", filterPlaceholder: "filter", type:"boolean"},
+
   ];
   // axios
   // .get("http://localhost:5000/criteria1/")
@@ -27,7 +35,7 @@ function C25table() {
   // });
   function getEvents() {
 
-    axios.get("http://localhost:5000/criteria2/C23")
+    axios.get("http://localhost:5000/criteria2/C22")
         .then(response => response.data)
         .then((data) => {
             setTableData(data)
@@ -44,7 +52,7 @@ useEffect(()=>{
   return (
     
     <div className="App">
-      <h4 align="center">Activities held to encourage bright students</h4>
+      <h4 align="center">10: PO Attainment</h4>
 
       <MaterialTable
         columns={columns}
@@ -54,7 +62,7 @@ useEffect(()=>{
             new Promise((resolve, reject) => {
               setTableData([...tableData, newRow]);
               axios
-                .post("http://localhost:5000/criteria2/c23//add", newRow)
+                .post("http://localhost:5000/criteria2/c22//add", newRow)
                 .then((res) => console.log(res.data));
 
               setTimeout(() => resolve(), 500);
@@ -78,7 +86,7 @@ useEffect(()=>{
               // console.log({tableData.id});
               
 
-              axios.post(`http://localhost:5000/criteria2/c23/update/${oldRow._id}`, newRow);
+              axios.post(`http://localhost:5000/criteria2/c22/update/${oldRow._id}`, newRow);
             })},
           
           onRowDelete: (selectedRow) =>
@@ -88,7 +96,7 @@ useEffect(()=>{
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
 
-              axios.delete(`http://localhost:5000/criteria2/c23/delete/${selectedRow._id}`);
+              axios.delete(`http://localhost:5000/criteria2/c22/delete/${selectedRow._id}`);
             }),
         }}
         actions={[
@@ -138,4 +146,4 @@ useEffect(()=>{
   );
 }
 
-export default C25table;
+export default C26table;
