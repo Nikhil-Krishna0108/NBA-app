@@ -63,7 +63,7 @@ function Navbar() {
             </div>
 
             <div class="col-md-3 col-sm-6">
-              <NavLink to="/criteria1">
+              <NavLink to="/criteria2">
                 <div class="service-box ">
                   <div class="service-icon red">
                     <div class="front-content">
@@ -83,7 +83,7 @@ function Navbar() {
               </NavLink>
             </div>
             <div class="col-md-3 col-sm-6">
-              <NavLink to="/criteria1">
+              <NavLink to="/criteria3">
                 <div class="service-box ">
                   <div class="service-icon red">
                     <div class="front-content">
@@ -103,7 +103,7 @@ function Navbar() {
               </NavLink>
             </div>
             <div class="col-md-3 col-sm-6">
-              <NavLink to="/criteria1">
+              <NavLink to="/criteria4">
                 <div class="service-box ">
                   <div class="service-icon red">
                     <div class="front-content">

@@ -14,7 +14,7 @@ exports.add_table_row = async (Modal,req, res) => {
 			const newTableRow = new Modal(req.body);
 			newTableRow
 			.save()
-			.then(() => res.json('Exercise added!'))
+			.then(() => res.json('Row added!'))
 			.catch((err) => {
 				console.log("pre db error")
 				return res.status(400).json('Error: ' + err)});
@@ -80,3 +80,10 @@ Modal.findByIdAndUpdate(user_id, req_body,
 	}
 };
  
+
+exports.generic_create = async(Modal,req,res,tname,critname)=>{
+const query = Modal.find()
+query.collection(Modal.collection)
+
+
+}

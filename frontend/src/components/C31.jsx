@@ -5,19 +5,17 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
 
 
-function C11table() {
+function C31table() {
   const [tableData, setTableData] = useState([]);
+  
   const columns = [
 
-    { title: "Vision", field: "vis", filterPlaceholder: "filter" },
-    { title: "M1", field: "M1", filterPlaceholder: "filter" },
-    { title: "M2", field: "M2", filterPlaceholder: "filter" },
-    { title: "M3", field: "M3", filterPlaceholder: "filter" },
-    { title: "M4", field: "M4", filterPlaceholder: "filter" },
-    { title: "M5", field: "M5", filterPlaceholder: "filter" },
+    { title: "Course Outcome Number.", field: "cono", filterPlaceholder: "filter" },
+    { title: "Course Outcome", field: "co", filterPlaceholder: "filter" },
+    
   ];
   // axios
-  // .get("http://localhost:5000/criteria1/")
+  // .get("http://localhost:5000/criteria3/c31/")
   // .then((response) => {
   //   this.setState({ tableData: response.data });
   //   console.log(tableData);
@@ -26,8 +24,8 @@ function C11table() {
   //   console.log(error);
   // });
   function getEvents() {
-
-    axios.get("http://localhost:5000/criteria1/")
+//axios.post("http://localhost:5000/criteria3/",rowdata,crit1,table1)
+    axios.get("http://localhost:5000/criteria3/c31")
         .then(response => response.data)
         .then((data) => {
             setTableData(data)
@@ -53,11 +51,13 @@ useEffect(()=>{
           onRowAdd: (newRow) =>
             new Promise((resolve, reject) => {
               setTableData([...tableData, newRow]);
+              
               axios
-                .post("http://localhost:5000/criteria1/add", newRow)
+                .post("http://localhost:5000/criteria3/c31/add", newRow)
                 .then((res) => console.log(res.data));
 
               setTimeout(() => resolve(), 500);
+              console.log("ID IS"+tableData.id)
             }),
           onRowUpdate: (newRow, oldRow) =>
           {
@@ -78,7 +78,7 @@ useEffect(()=>{
               // console.log({tableData.id});
               
 
-              axios.post(`http://localhost:5000/criteria1/update/${oldRow._id}`, newRow);
+              axios.post(`http://localhost:5000/criteria3/c31/update/${oldRow._id}`, newRow);
             })},
           
           onRowDelete: (selectedRow) =>
@@ -88,7 +88,7 @@ useEffect(()=>{
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
 
-              axios.delete(`http://localhost:5000/criteria1/delete/${selectedRow._id}`);
+              axios.delete(`http://localhost:5000/criteria3/c31/delete/${selectedRow._id}`);
             }),
         }}
         actions={[
@@ -131,11 +131,11 @@ useEffect(()=>{
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
           headerStyle: { background: "#f44336", color: "#fff" },
         }}
-        title="Student Information"
+        title="On the Completion of the Course the student will be able to:"
         icons={{ Add: () => <AddIcon /> }}
       />
     </div>
   );
 }
 
-export default C11table;
+export default C31table;
