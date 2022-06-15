@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const c51 = new Schema(
     {
-        Year : { type: String },
+        year : { type: String },
         X : { type: String },
         N : { type: String },
         F : { type: String },

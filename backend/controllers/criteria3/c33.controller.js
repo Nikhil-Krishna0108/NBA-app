@@ -1,4 +1,4 @@
-const c33 = require('../models/c33.model')
+const c33 = require('../models/criteria3/c33.model')
 const router = require('express').Router()
 
 const crud = require('./crud-controller')
