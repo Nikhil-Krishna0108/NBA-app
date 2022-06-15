@@ -44,8 +44,7 @@ useEffect(()=>{
   return (
     
     <div className="App">
-      <h1 align="center">React-App</h1>
-      <h4 align="center">Crash Course on Material Table </h4>
+     
 
       <MaterialTable
         columns={columns}
@@ -132,7 +131,7 @@ useEffect(()=>{
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
           headerStyle: { background: "#f44336", color: "#fff" },
         }}
-        title="Student Information"
+        title="PEO – Mission Correlation"
         icons={{ Add: () => <AddIcon /> }}
       />
     </div>

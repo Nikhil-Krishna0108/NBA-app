@@ -27,6 +27,19 @@ const c24 = require('./controllers/c24.controller')
 app.use('/criteria2/c24', c24)
 
 module.exports = router;
+// const criteria3type1 = require('./controllers/criteria3type1.controller')
+// app.use('/criteria3type1', criteria3type1)
+const c31 = require('./controllers/c31.controller')
+app.use('/criteria3/c31', c31)
+const c32 = require('./controllers/c32.controller')
+app.use('/criteria3/c32', c32)
+const c33 = require('./controllers/c33.controller')
+app.use('/criteria3/c33', c33)
+const c34 = require('./controllers/c34.controller')
+app.use('/criteria3/c34', c34)
+
+const c3t1 = require('./controllers/c3t1.controller')
+app.use('/criteria3/text1',c3t1)
 
 
 

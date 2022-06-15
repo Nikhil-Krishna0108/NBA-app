@@ -129,7 +129,7 @@ useEffect(()=>{
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
           headerStyle: { background: "#f44336", color: "#fff" },
         }}
-        title="Student Information"
+        title="Comparison of AICTE and VTU Program Structure"
         icons={{ Add: () => <AddIcon /> }}
       />
     </div>

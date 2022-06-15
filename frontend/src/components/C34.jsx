@@ -5,18 +5,27 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
 
 
-function C12table() {
+function C34table() {
   const [tableData, setTableData] = useState([]);
   const columns = [
 
-    { title: "Peo", field: "Peo", filterPlaceholder: "filter" },
-    { title: "Mission", field: "Mission", filterPlaceholder: "filter" },
-    { title: "Correlation", field: "Correlation", filterPlaceholder: "filter" },
-    { title: "Justification", field: "Justification", filterPlaceholder: "filter" },
-
+    { title: "CO", field:  "co", filterPlaceholder: "filter" },
+    { title: "PO1", field: "po1", filterPlaceholder: "filter" },
+    { title: "PO2", field: "po2", filterPlaceholder: "filter" },
+    { title: "PO3", field: "po3", filterPlaceholder: "filter" },
+    { title: "PO4", field: "po4", filterPlaceholder: "filter" },
+    { title: "PO5", field: "po5", filterPlaceholder: "filter" },
+    { title: "PO6", field: "po6", filterPlaceholder: "filter" },
+    { title: "PO7", field: "po7", filterPlaceholder: "filter" },
+    { title: "PO8", field: "po8", filterPlaceholder: "filter" },
+    { title: "PO9", field: "po9", filterPlaceholder: "filter" },
+    { title: "PO10", field:"po10", filterPlaceholder: "filter" },
+    { title: "PO11", field:"po11", filterPlaceholder: "filter" },
+    { title: "PO12", field:"po12", filterPlaceholder: "filter" },
+    
   ];
   // axios
-  // .get("http://localhost:5000/criteria1/")
+  // .get("http://localhost:5000/criteria3/c34/")
   // .then((response) => {
   //   this.setState({ tableData: response.data });
   //   console.log(tableData);
@@ -26,7 +35,7 @@ function C12table() {
   // });
   function getEvents() {
 
-    axios.get("http://localhost:5000/criteria1/c12")
+    axios.get("http://localhost:5000/criteria3/c34")
         .then(response => response.data)
         .then((data) => {
             setTableData(data)
@@ -43,8 +52,7 @@ useEffect(()=>{
   return (
     
     <div className="App">
-      <h1 align="center">React-App</h1>
-      <h4 align="center">Crash Course on Material Table </h4>
+     
 
       <MaterialTable
         columns={columns}
@@ -54,7 +62,7 @@ useEffect(()=>{
             new Promise((resolve, reject) => {
               setTableData([...tableData, newRow]);
               axios
-                .post("http://localhost:5000/criteria1/c12/add", newRow)
+                .post("http://localhost:5000/criteria3/c34/add", newRow)
                 .then((res) => console.log(res.data));
 
               setTimeout(() => resolve(), 500);
@@ -78,7 +86,7 @@ useEffect(()=>{
               // console.log({tableData.id});
               
 
-              axios.post(`http://localhost:5000/criteria1/c12/update/${oldRow._id}`, newRow);
+              axios.post(`http://localhost:5000/criteria3/c34/update/${oldRow._id}`, newRow);
             })},
           
           onRowDelete: (selectedRow) =>
@@ -88,7 +96,7 @@ useEffect(()=>{
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
 
-              axios.delete(`http://localhost:5000/criteria1/c12/delete/${selectedRow._id}`);
+              axios.delete(`http://localhost:5000/criteria3/c34/delete/${selectedRow._id}`);
             }),
         }}
         actions={[
@@ -131,11 +139,11 @@ useEffect(()=>{
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
           headerStyle: { background: "#f44336", color: "#fff" },
         }}
-        title="PEO – Mission Correlation Justification"
+        title="On the Completion of the Course the student will be able to:"
         icons={{ Add: () => <AddIcon /> }}
       />
     </div>
   );
 }
 
-export default C12table;
+export default C34table;
