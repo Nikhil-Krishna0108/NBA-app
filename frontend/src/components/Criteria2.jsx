@@ -13,6 +13,8 @@ export const Criteria2 = () => {
     <div>
       <Navbar />
       <div className="criteria-one">
+    <h1>CRITERION 2 Program Curriculum and Teaching-learning process</h1> 
+    <textarea id="froala-editor">Initialize the Froala WYSIWYG HTML Editor on a textarea.</textarea>
         <C21table />
         <br />
         <C22table />

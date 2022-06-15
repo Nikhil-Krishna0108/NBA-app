@@ -8,11 +8,7 @@ import Landing from "./components/Landing";
 import Login from "./components/Login";
 // import { Routes, Route } from "react-router-dom";
 // import C11table from "./components/C11";
-<<<<<<< HEAD
-import {Criteria1 } from "./components/Criteria1";
-=======
 import Criteria1 from "./components/Criteria1";
->>>>>>> 2dec762973ba87ea0f592632b47461dd2f13c20b
 import { Criteria3 } from "./components/Criteria3";
 
 import { Criteria4 } from "./components/Criteria4";

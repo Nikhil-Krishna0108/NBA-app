@@ -39,10 +39,8 @@ function C21table() {
 
   return (
     <div className="App">
-      <h1 align="center">Criteria 2</h1>
-      <h4 align="center">
-        Table 1: Comparison of AICTE and VTU Program Structure
-      </h4>
+
+
 
       <MaterialTable
         columns={columns}
