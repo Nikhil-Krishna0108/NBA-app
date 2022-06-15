@@ -45,12 +45,15 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 }
 
 .btn{
-  background: white;
+ 
   margin-left:auto;
 
 }
 
 .criteria-one{
+
+  padding-top: 60px;
+  padding-bottom: 60px;
   margin: auto;
   max-width: 75%;
 }
@@ -59,7 +62,7 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
   font-size: 2rem;
   border: 2px solid #8BC6EC;
   padding: 20px;
-  margin: 80px;
+  margin: 100px;
 }
 
 .text-center {
@@ -67,13 +70,14 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 }
 
 .btn-option {
+  margin: 20px;
   border: 2px;
   min-width:250px;
   font-size: x-large;
   border-radius: 40px;
   background: #2245AD;
   padding: 15px 40px;
-  color: #ffffff;
+  /* color: #ffffff; */
   font-size: 1.25rem;
   cursor: pointer;
   transition: all 150ms ease-in-out;

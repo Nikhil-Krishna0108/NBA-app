@@ -1,15 +1,13 @@
-import React, { useState,Component,useEffect} from "react";
+import React, { useState, Component, useEffect } from "react";
 import axios from "axios";
 import MaterialTable from "material-table";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
 
-
 function C34table() {
   const [tableData, setTableData] = useState([]);
   const columns = [
-
-    { title: "CO", field:  "co", filterPlaceholder: "filter" },
+    { title: "CO", field: "co", filterPlaceholder: "filter" },
     { title: "PO1", field: "po1", filterPlaceholder: "filter" },
     { title: "PO2", field: "po2", filterPlaceholder: "filter" },
     { title: "PO3", field: "po3", filterPlaceholder: "filter" },
@@ -19,10 +17,9 @@ function C34table() {
     { title: "PO7", field: "po7", filterPlaceholder: "filter" },
     { title: "PO8", field: "po8", filterPlaceholder: "filter" },
     { title: "PO9", field: "po9", filterPlaceholder: "filter" },
-    { title: "PO10", field:"po10", filterPlaceholder: "filter" },
-    { title: "PO11", field:"po11", filterPlaceholder: "filter" },
-    { title: "PO12", field:"po12", filterPlaceholder: "filter" },
-    
+    { title: "PO10", field: "po10", filterPlaceholder: "filter" },
+    { title: "PO11", field: "po11", filterPlaceholder: "filter" },
+    { title: "PO12", field: "po12", filterPlaceholder: "filter" },
   ];
   // axios
   // .get("http://localhost:5000/criteria3/c34/")
@@ -34,26 +31,20 @@ function C34table() {
   //   console.log(error);
   // });
   function getEvents() {
-
-    axios.get("http://localhost:5000/criteria3/c34")
-        .then(response => response.data)
-        .then((data) => {
-            setTableData(data)
-            console.log({tableData})
-         
-        });
-}
-useEffect(()=>{
+    axios
+      .get("http://localhost:5000/criteria3/c34")
+      .then((response) => response.data)
+      .then((data) => {
+        setTableData(data);
+        console.log({ tableData });
+      });
+  }
+  useEffect(() => {
     getEvents();
-  },[])
+  }, []);
 
-
-  
   return (
-    
     <div className="App">
-     
-
       <MaterialTable
         columns={columns}
         data={tableData}
@@ -67,28 +58,29 @@ useEffect(()=>{
 
               setTimeout(() => resolve(), 500);
             }),
-          onRowUpdate: (newRow, oldRow) =>
-          {
-            console.log({newRow,oldRow});
+          onRowUpdate: (newRow, oldRow) => {
+            console.log({ newRow, oldRow });
             return new Promise((resolve, reject) => {
-              
               const updatedData = [...tableData];
-            
+
               updatedData[oldRow.tableData.id] = newRow;
-             
+
               setTableData(updatedData);
-              
+
               setTimeout(() => resolve(), 500);
-              var id=oldRow["_id"];
+              var id = oldRow["_id"];
               console.log(oldRow._id);
-              console.log({newRow});
+              console.log({ newRow });
               //console.log(id);
               // console.log({tableData.id});
-              
 
-              axios.post(`http://localhost:5000/criteria3/c34/update/${oldRow._id}`, newRow);
-            })},
-          
+              axios.post(
+                `http://localhost:5000/criteria3/c34/update/${oldRow._id}`,
+                newRow
+              );
+            });
+          },
+
           onRowDelete: (selectedRow) =>
             new Promise((resolve, reject) => {
               const updatedData = [...tableData];
@@ -96,7 +88,9 @@ useEffect(()=>{
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
 
-              axios.delete(`http://localhost:5000/criteria3/c34/delete/${selectedRow._id}`);
+              axios.delete(
+                `http://localhost:5000/criteria3/c34/delete/${selectedRow._id}`
+              );
             }),
         }}
         actions={[
@@ -137,7 +131,7 @@ useEffect(()=>{
           columnsButton: true,
           rowStyle: (data, index) =>
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
-          headerStyle: { background: "#f44336", color: "#fff" },
+          headerStyle: { background: "#007bff", color: "#fff" },
         }}
         title="On the Completion of the Course the student will be able to:"
         icons={{ Add: () => <AddIcon /> }}

@@ -1,19 +1,20 @@
-import React, { useState,Component,useEffect} from "react";
+import React, { useState, Component, useEffect } from "react";
 import axios from "axios";
 import MaterialTable from "material-table";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
 
-
 function C12table() {
   const [tableData, setTableData] = useState([]);
   const columns = [
-
     { title: "Peo", field: "Peo", filterPlaceholder: "filter" },
     { title: "Mission", field: "Mission", filterPlaceholder: "filter" },
     { title: "Correlation", field: "Correlation", filterPlaceholder: "filter" },
-    { title: "Justification", field: "Justification", filterPlaceholder: "filter" },
-
+    {
+      title: "Justification",
+      field: "Justification",
+      filterPlaceholder: "filter",
+    },
   ];
   // axios
   // .get("http://localhost:5000/criteria1/")
@@ -25,27 +26,20 @@ function C12table() {
   //   console.log(error);
   // });
   function getEvents() {
-
-    axios.get("http://localhost:5000/criteria1/c12")
-        .then(response => response.data)
-        .then((data) => {
-            setTableData(data)
-            console.log({tableData})
-         
-        });
-}
-useEffect(()=>{
+    axios
+      .get("http://localhost:5000/criteria1/c12")
+      .then((response) => response.data)
+      .then((data) => {
+        setTableData(data);
+        console.log({ tableData });
+      });
+  }
+  useEffect(() => {
     getEvents();
-  },[])
+  }, []);
 
-
-  
   return (
-    
     <div className="App">
-      <h1 align="center">React-App</h1>
-      <h4 align="center">Crash Course on Material Table </h4>
-
       <MaterialTable
         columns={columns}
         data={tableData}
@@ -59,28 +53,29 @@ useEffect(()=>{
 
               setTimeout(() => resolve(), 500);
             }),
-          onRowUpdate: (newRow, oldRow) =>
-          {
-            console.log({newRow,oldRow});
+          onRowUpdate: (newRow, oldRow) => {
+            console.log({ newRow, oldRow });
             return new Promise((resolve, reject) => {
-              
               const updatedData = [...tableData];
-            
+
               updatedData[oldRow.tableData.id] = newRow;
-             
+
               setTableData(updatedData);
-              
+
               setTimeout(() => resolve(), 500);
-              var id=oldRow["_id"];
+              var id = oldRow["_id"];
               console.log(oldRow._id);
-              console.log({newRow});
+              console.log({ newRow });
               //console.log(id);
               // console.log({tableData.id});
-              
 
-              axios.post(`http://localhost:5000/criteria1/c12/update/${oldRow._id}`, newRow);
-            })},
-          
+              axios.post(
+                `http://localhost:5000/criteria1/c12/update/${oldRow._id}`,
+                newRow
+              );
+            });
+          },
+
           onRowDelete: (selectedRow) =>
             new Promise((resolve, reject) => {
               const updatedData = [...tableData];
@@ -88,7 +83,9 @@ useEffect(()=>{
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
 
-              axios.delete(`http://localhost:5000/criteria1/c12/delete/${selectedRow._id}`);
+              axios.delete(
+                `http://localhost:5000/criteria1/c12/delete/${selectedRow._id}`
+              );
             }),
         }}
         actions={[
@@ -129,7 +126,7 @@ useEffect(()=>{
           columnsButton: true,
           rowStyle: (data, index) =>
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
-          headerStyle: { background: "#f44336", color: "#fff" },
+          headerStyle: { background: "#007bff", color: "#fff" },
         }}
         title="Student Information"
         icons={{ Add: () => <AddIcon /> }}

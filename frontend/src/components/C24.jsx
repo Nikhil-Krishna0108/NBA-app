@@ -1,33 +1,36 @@
-import React, { useState,Component,useEffect} from "react";
+import React, { useState, Component, useEffect } from "react";
 import axios from "axios";
 import MaterialTable from "material-table";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
 import { Checkbox, MenuItem, Select } from "@material-ui/core";
 
-
 function C24table() {
-    
-
   const [tableData, setTableData] = useState([
     // { teachingMethod: 1, type: "Neeraj", subject: 'neeraj@gmail.com', relavance: 9876543210, year: 2019 },
     // { teachingMethod: 1, type: "Neeraj", subject: 'neeraj@gmail.com', relavance: 9876543210, year: 2019 },
     // { teachingMethod: 1, type: "Neeraj", subject: 'neeraj@gmail.com', relavance: 9876543210, year: 2019 },
     // { teachingMethod: 1, type: "Neeraj", subject: 'neeraj@gmail.com', relavance: 9876543210, year: 2021 },
     // { teachingMethod: 1, type: "Neeraj", subject: 'neeraj@gmail.com', relavance: 9876543210, year: 2020 },
-
   ]);
-  const [year,setYear]=useState('all')
-  const [filteredData,setFilteredData]=useState(tableData)
-  const [filter, setFilter]=useState(true)
+  const [year, setYear] = useState("all");
+  const [filteredData, setFilteredData] = useState(tableData);
+  const [filter, setFilter] = useState(true);
   const columns = [
-
-    { title: "Teaching method", field: "teachingMethod", filterPlaceholder: "filter", type:"numeric" },
+    {
+      title: "Teaching method",
+      field: "teachingMethod",
+      filterPlaceholder: "filter",
+      type: "numeric",
+    },
     { title: "Type", field: "type", filterPlaceholder: "filter" },
     { title: "Subject", field: "subject", filterPlaceholder: "filter" },
-    { title: "Relavance of PO's", field: "relavance", filterPlaceholder: "filter" },
+    {
+      title: "Relavance of PO's",
+      field: "relavance",
+      filterPlaceholder: "filter",
+    },
     { title: "Year", field: "year" },
-    
   ];
   // axios
   // .get("http://localhost:5000/criteria1/")
@@ -39,33 +42,29 @@ function C24table() {
   //   console.log(error);
   // });
   function getEvents() {
+    axios
+      .get("http://localhost:5000/criteria2/C24")
+      .then((response) => response.data)
+      .then((data) => {
+        setTableData(data);
+        console.log({ tableData });
+      });
+  }
 
-    axios.get("http://localhost:5000/criteria2/C24")
-        .then(response => response.data)
-        .then((data) => {
-            setTableData(data)
-            console.log({tableData})
-         
-        });
-}
-
-useEffect(()=>{
+  useEffect(() => {
     getEvents();
-  },[])
-  const handleChange=()=>{
-    setFilter(!filter)
-   }
-   useEffect(()=>{
-       console.log({tableData});
- setFilteredData(year==='all'?tableData:tableData.filter(dt=>dt.year===year))
- 
-   },[year, tableData])
- 
+  }, []);
+  const handleChange = () => {
+    setFilter(!filter);
+  };
+  useEffect(() => {
+    console.log({ tableData });
+    setFilteredData(
+      year === "all" ? tableData : tableData.filter((dt) => dt.year === year)
+    );
+  }, [year, tableData]);
 
-
-  
   return (
-    
     <div className="App">
       <h4 align="center">Table 3: CAY (2016-17)</h4>
 
@@ -73,38 +72,44 @@ useEffect(()=>{
         columns={columns}
         data={filteredData}
         // options={{
-            
+
         //   }}
-          actions={[
-            {
-                icon: () => <GetAppIcon />,
-                tooltip: "Click me",
-                onClick: (e, data) => console.log(data),
-              icon:()=><Checkbox
-              checked={filter}
-              onChange={handleChange}
-              inputProps={{ 'aria-label': 'primary checkbox' }}
-            />,
-            tooltip:"Hide/Show Filter option",
-            isFreeAction:true
-            },
-            {
-              icon:()=><Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              style={{width:100}}
-              value={year}
-              onChange={(e)=>setYear(e.target.value)}
-            >
-               <MenuItem value={"all"}><em>All</em></MenuItem>
-              <MenuItem value={'2019'}>2019</MenuItem>
-              <MenuItem value={'2020'}>2020</MenuItem>
-              <MenuItem value={'2021'}>2021</MenuItem>
-            </Select>,
-            tooltip:"Filter Year",
-            isFreeAction:true
-            }
-          ]}
+        actions={[
+          {
+            icon: () => <GetAppIcon />,
+            tooltip: "Click me",
+            onClick: (e, data) => console.log(data),
+            icon: () => (
+              <Checkbox
+                checked={filter}
+                onChange={handleChange}
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />
+            ),
+            tooltip: "Hide/Show Filter option",
+            isFreeAction: true,
+          },
+          {
+            icon: () => (
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                style={{ width: 100 }}
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+              >
+                <MenuItem value={"all"}>
+                  <em>All</em>
+                </MenuItem>
+                <MenuItem value={"2019"}>2019</MenuItem>
+                <MenuItem value={"2020"}>2020</MenuItem>
+                <MenuItem value={"2021"}>2021</MenuItem>
+              </Select>
+            ),
+            tooltip: "Filter Year",
+            isFreeAction: true,
+          },
+        ]}
         editable={{
           onRowAdd: (newRow) =>
             new Promise((resolve, reject) => {
@@ -115,28 +120,29 @@ useEffect(()=>{
 
               setTimeout(() => resolve(), 500);
             }),
-          onRowUpdate: (newRow, oldRow) =>
-          {
-            console.log({newRow,oldRow});
+          onRowUpdate: (newRow, oldRow) => {
+            console.log({ newRow, oldRow });
             return new Promise((resolve, reject) => {
-              
               const updatedData = [...tableData];
-            
+
               updatedData[oldRow.tableData.id] = newRow;
-             
+
               setTableData(updatedData);
-              
+
               setTimeout(() => resolve(), 500);
-              var id=oldRow["_id"];
+              var id = oldRow["_id"];
               console.log(oldRow._id);
-              console.log({newRow});
+              console.log({ newRow });
               //console.log(id);
               // console.log({tableData.id});
-              
 
-              axios.post(`http://localhost:5000/criteria2/c24/update/${oldRow._id}`, newRow);
-            })},
-          
+              axios.post(
+                `http://localhost:5000/criteria2/c24/update/${oldRow._id}`,
+                newRow
+              );
+            });
+          },
+
           onRowDelete: (selectedRow) =>
             new Promise((resolve, reject) => {
               const updatedData = [...tableData];
@@ -144,7 +150,9 @@ useEffect(()=>{
               setTableData(updatedData);
               setTimeout(() => resolve(), 1000);
 
-              axios.delete(`http://localhost:5000/criteria2/c24/delete/${selectedRow._id}`);
+              axios.delete(
+                `http://localhost:5000/criteria2/c24/delete/${selectedRow._id}`
+              );
             }),
         }}
         // actions={[
@@ -157,7 +165,7 @@ useEffect(()=>{
         // ]}
         onSelectionChange={(selectedRows) => console.log(selectedRows)}
         options={{
-            filtering:filter,
+          filtering: filter,
           sorting: true,
           search: true,
           searchFieldAlignment: "right",
@@ -186,7 +194,7 @@ useEffect(()=>{
           columnsButton: true,
           rowStyle: (data, index) =>
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
-          headerStyle: { background: "#f44336", color: "#fff" },
+          headerStyle: { background: "#007bff", color: "#fff" },
         }}
         title="Student Information"
         icons={{ Add: () => <AddIcon /> }}
