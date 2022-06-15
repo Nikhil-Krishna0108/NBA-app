@@ -42,6 +42,10 @@ const Landing = () => {
         </ul>
       </nav> */}
 
+      <div className="App">
+        <h1>DAYANANDA SAGAR COLLEGE OF ENGINEERING</h1>
+      </div>
+
       <section id="Banner" class="content-section">
         <div class="container content-wrap text-center">
           <h1>NBA WEB PORTAL</h1>

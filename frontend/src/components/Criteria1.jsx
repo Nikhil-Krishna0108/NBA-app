@@ -1,6 +1,7 @@
 
 import C11table from "./C11";
 import C12table from "./C12";
+<<<<<<< HEAD
 import React, {Component, PropTypes} from 'react';
 
 export const Criteria1 = () => {
@@ -14,8 +15,24 @@ export const Criteria1 = () => {
       
 
       <div>
+=======
+import Pdf from "react-to-pdf";
+import Navbar from "./Navbar";
+
+const Criteria1 = () => {
+  const ref = React.createRef();
+  return (
+    <div>
+      <Navbar />
+
+      <div className="criteria-one" ref={ref}>
+        <C11table />
+        <br />
+>>>>>>> 2dec762973ba87ea0f592632b47461dd2f13c20b
         <C12table />
+        <br />
       </div>
+<<<<<<< HEAD
       <div>
       <textarea id="w3review" name="w3review" rows="20" cols="200">1.1 State the Vision and Mission of the Department and Institute (5)
 Vision and Mission of the Institute
@@ -95,6 +112,21 @@ The process of framing the Vision and Mission of the department and PEO‟s of t
 
       
 
+=======
+      <Pdf
+        targetRef={ref}
+        filename="code-example.pdf"
+        x={0.6}
+        y={0.6}
+        scale={0.6}
+      >
+        {({ toPdf }) => (
+          <button className="btn btn-primary btn-l btn-option" onClick={toPdf}>
+            Generate Pdf
+          </button>
+        )}
+      </Pdf>
+>>>>>>> 2dec762973ba87ea0f592632b47461dd2f13c20b
     </div>
 
   );

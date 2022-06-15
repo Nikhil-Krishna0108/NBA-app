@@ -1,5 +1,5 @@
 .App {
-  /* text-align: center; */
+  text-align: center;
 }
 
 .App-logo {
@@ -37,7 +37,55 @@
   }
 }
 
-.btn-light{
+.login{
+  background-color: #8BC6EC;
+background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
+  height:100vh
+}
+
+.btn{
+ 
   margin-left:auto;
 
 }
+
+.criteria-one{
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin: auto;
+  max-width: 75%;
+}
+
+.content {
+  font-size: 2rem;
+  border: 2px solid #8BC6EC;
+  padding: 20px;
+  margin: 100px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-option {
+  margin: 20px;
+  border: 2px;
+  min-width:250px;
+  font-size: x-large;
+  border-radius: 40px;
+  background: #2245AD;
+  padding: 15px 40px;
+  /* color: #ffffff; */
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+  /* button:hover {
+    background: darken($medBlue, 8%);  
+  } */
+  
+  .navbar{
+    text-align: center;
+  }
