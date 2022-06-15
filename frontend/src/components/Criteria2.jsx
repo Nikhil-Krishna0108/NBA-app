@@ -7,6 +7,7 @@ import C25table from "./C25";
 import C26table from "./C26";
 import C27table from "./C27";
 import Navbar from "./Navbar";
+import TextBox from "./TextBox";
 
 export const Criteria2 = () => {
   return (
@@ -14,7 +15,7 @@ export const Criteria2 = () => {
       <Navbar />
       <div className="criteria-one">
     <h1>CRITERION 2 Program Curriculum and Teaching-learning process</h1> 
-    <textarea id="froala-editor">Initialize the Froala WYSIWYG HTML Editor on a textarea.</textarea>
+        <TextBox />
         <C21table />
         <br />
         <C22table />

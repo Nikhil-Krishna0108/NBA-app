@@ -1,5 +1,5 @@
 import React from "react";
-import { Editor, EditorState, getDefaultKeyBinding, RichUtils } from "draft-js";
+import { Editor, ContentState, EditorState, getDefaultKeyBinding, RichUtils } from "draft-js";
 import "./TextBox.css";
 import "../../node_modules/draft-js/dist/Draft.css";
 import axios from "axios";
@@ -7,7 +7,8 @@ import { convertToRaw } from "draft-js";
 class TextBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { editorState: EditorState.createEmpty() };
+    this.state = { editorState: EditorState.createWithContent(ContentState.createFromText("abc")) };
+    
 
     this.focus = () => this.refs.editor.focus();
     this.onChange = (editorState) => this.setState({ editorState });
