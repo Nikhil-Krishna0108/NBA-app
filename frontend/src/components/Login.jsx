@@ -3,19 +3,24 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="login content-section">
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col">
-            <div className="card mx-auto">
-              <div className="card-body">
-                <h1
-                  className="card-title"
-                  style={{ borderBottom: "1px solid #efefef" }}
-                >
-                  Login to access criterias
-                </h1>
-                <Form />
+    <div>
+      <div className="App">
+        <h1>DAYANANDA SAGAR COLLEGE OF ENGINEERING</h1>
+      </div>
+      <div className="login content-section">
+        <div className="container mt-5">
+          <div className="row">
+            <div className="col">
+              <div className="card mx-auto">
+                <div className="card-body">
+                  <h1
+                    className="card-title"
+                    style={{ borderBottom: "1px solid #efefef" }}
+                  >
+                    Login to access criterias
+                  </h1>
+                  <Form />
+                </div>
               </div>
             </div>
           </div>
@@ -42,7 +47,7 @@ const Form = () => {
       localStorage.setItem("token", "askdjaksjdla");
       setLoggedin(true);
       if (loggedin) {
-        return navigate("/dashboard");
+        return navigate("/user");
       }
     } else {
       window.alert("Incorrect email and password");
