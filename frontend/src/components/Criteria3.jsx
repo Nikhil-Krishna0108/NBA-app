@@ -3,10 +3,7 @@ import C31table from "./C31";
 import C32table from "./C32";
 import C33table from "./C33";
 import C34table from "./C34";
-import TextBox from "./TextBox";
 import Navbar from "./Navbar";
-import NewText1 from "./NewText1";
-import FINAL_TEXT from "./FINAL_TEXT"
 import FinalText_2 from"./FinalText_2"
 // const tn=1
 export const Criteria3 = () => {
@@ -27,22 +24,6 @@ export const Criteria3 = () => {
         </h3>
         <br />
         <h4>Course Name: Discrete Mathematics Structures - C204</h4>
-        <br />
-        <div>
-          
-          <FinalText_2 tnum={1}/>
-
-
-        </div>
-        <br />
-        <br />
-        <div>
-          
-          <FinalText_2 tnum={2}/>
-
-
-        </div>
-        <br />
         <div>
           <C31table />
         </div>

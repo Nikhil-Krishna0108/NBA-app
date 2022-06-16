@@ -22,7 +22,7 @@ export const Criteria6 = () => {
         <h4>Laboratories: Maintenance overall</h4>
         <div>
           
-          <FinalText_2 tnum={3}/>
+          <FinalText_2 tnum={100}/>
 
 
         </div>

@@ -24,7 +24,7 @@ export const Criteria5 = () => {
         <h4>Student-Faculty Ratio(SFR)</h4>
         <div>
           
-          <FinalText_2 tnum={3}/>
+          <FinalText_2 tnum={2}/>
 
 
         </div>
