@@ -48,7 +48,7 @@ function C23table() {
   // });
   function getEvents() {
     axios
-      .get("http://localhost:5000/criteria2/C23")
+      .get("http://localhost:5000/criteria2/c23")
       .then((response) => response.data)
       .then((data) => {
         setTableData(data);
@@ -71,7 +71,7 @@ function C23table() {
             new Promise((resolve, reject) => {
               setTableData([...tableData, newRow]);
               axios
-                .post("http://localhost:5000/criteria2/c23//add", newRow)
+                .post("http://localhost:5000/criteria2/c23/add", newRow)
                 .then((res) => console.log(res.data));
 
               setTimeout(() => resolve(), 500);

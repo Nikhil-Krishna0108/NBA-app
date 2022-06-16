@@ -35,6 +35,14 @@ export const Criteria3 = () => {
 
         </div>
         <br />
+        <br />
+        <div>
+          
+          <FinalText_2 tnum={2}/>
+
+
+        </div>
+        <br />
         <div>
           <C31table />
         </div>
