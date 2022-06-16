@@ -1,4 +1,4 @@
-const c34 = require('../models/c34.model')
+const c55 = require('../../models/criteria5/c55.model')
 const router = require('express').Router()
 
 const crud = require('./crud-controller')
@@ -10,7 +10,3 @@ router.delete('/delete/:id', function(req,res){return crud.delete_table_row(c34,
 router.post('/update/:id', function(req,res){return crud.update_table_row(c34,req,res)});
 
 module.exports = router;
-
-
- 
-
