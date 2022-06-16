@@ -12,6 +12,8 @@ import Criteria1 from "./components/Criteria1";
 import { Criteria3 } from "./components/Criteria3";
 
 import { Criteria4 } from "./components/Criteria4";
+import { Criteria5 } from "./components/Criteria5";
+import { Criteria6 } from "./components/Criteria6";
 // import Navbar from './components/Navbar';
 import Options from "./components/Options";
 import Criterias from "./components/Criterias";
@@ -30,6 +32,8 @@ function App() {
         <Route path="/criteria2" element={<Criteria2 />} />
         <Route path="/criteria3" element={<Criteria3 />} />
         <Route path="/criteria4" element={<Criteria4 />} />
+        <Route path="/criteria5" element={<Criteria5 />} />
+        <Route path="/criteria6" element={<Criteria6 />} />
       </Routes>
     </div>
   );

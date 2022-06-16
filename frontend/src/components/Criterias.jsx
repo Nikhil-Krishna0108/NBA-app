@@ -98,7 +98,7 @@ function Criterias() {
               </NavLink>
             </div>
             <div class="col-md-3 col-sm-6">
-              <NavLink to="/criteria1">
+              <NavLink to="/criteria5">
                 <div class="service-box ">
                   <div class="service-icon red">
                     <div class="front-content">
@@ -118,7 +118,7 @@ function Criterias() {
               </NavLink>
             </div>
             <div class="col-md-3 col-sm-6">
-              <NavLink to="/criteria1">
+              <NavLink to="/criteria6">
                 <div class="service-box ">
                   <div class="service-icon red">
                     <div class="front-content">

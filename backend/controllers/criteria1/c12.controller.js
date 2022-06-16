@@ -1,7 +1,7 @@
-const criteria1 = require('../models/criteria1/c12.model')
+const criteria1 = require('../../models/criteria1/c12.model')
 const router = require('express').Router()
 
-const crud = require('./crud-controller')
+const crud = require('../crud-controller')
 
 router.get('/', function(req,res){return crud.list_table_rows(criteria1,req,res)});
 router.post('/add', function(req,res){return crud.add_table_row(criteria1,req,res)});
