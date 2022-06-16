@@ -1,11 +1,5 @@
 import React from "react";
-import C21table from "./C21";
-import C22table from "./C22";
-// import C23table from './C23';
-import C24table from "./C24";
-import C25table from "./C25";
-import C26table from "./C26";
-import C27table from "./C27";
+
 import Navbar from "./Navbar";
 import TextBox from "./TextBox";
 
@@ -23,8 +17,11 @@ export const Criteria5 = () => {
     <div>
       <Navbar />
       <div className="criteria-one" ref={ref}>
-        <h1>CRITERION 5 Faculty Information and contribution</h1>
+        <h1 align="center">CRITERION 5 </h1>
+        <br />
+        <h3 align="center">Faculty Information and contribution</h3>
         <TextBox />
+        <br />
         <h4>Student-Faculty Ratio(SFR)</h4>
         <div>
           <FinalText_2 tnum={2} />

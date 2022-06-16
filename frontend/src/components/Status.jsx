@@ -37,7 +37,7 @@ const Status = () => {
               <b>CRITERIA 1</b>
             </Accordion.Header>
             <Accordion.Body>
-              Assigned to: <hr />
+              Assigned to: <b> Prof XYZ</b> <hr />
               Progress
               <Progress done="40" />
             </Accordion.Body>
@@ -47,7 +47,7 @@ const Status = () => {
               <b>CRITERIA 2</b>
             </Accordion.Header>
             <Accordion.Body>
-              Assigned to: <hr />
+              Assigned to: <b>Dr ABC</b> <hr />
               Progress
               <Progress done="70" />
             </Accordion.Body>
@@ -59,7 +59,7 @@ const Status = () => {
             <Accordion.Body>
               Assigned to: <hr />
               Progress
-              <Progress done="70" />
+              <Progress done="50" />
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="3">
@@ -69,7 +69,7 @@ const Status = () => {
             <Accordion.Body>
               Assigned to: <hr />
               Progress
-              <Progress done="70" />
+              <Progress done="60" />
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="4">
@@ -79,7 +79,7 @@ const Status = () => {
             <Accordion.Body>
               Assigned to: <hr />
               Progress
-              <Progress done="70" />
+              <Progress done="20" />
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="5">
@@ -89,7 +89,7 @@ const Status = () => {
             <Accordion.Body>
               Assigned to: <hr />
               Progress
-              <Progress done="70" />
+              <Progress done="45" />
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
