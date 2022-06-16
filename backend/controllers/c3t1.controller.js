@@ -3,8 +3,8 @@ const router = require('express').Router()
 
 const crud = require('./crud-controller')
 
-router.post('/', function(req,res){return crud.add_table_row(c3t1,req,res)});
-router.get('/display', function(req,res){return crud.list_table_rows(c3t1,req,res)});
+router.post('/add/:id', function(req,res){return crud.update_text(c3t1,req,res)});
+router.get('/display/:id', function(req,res){return crud.find_table_row(c3t1,req,res)});
 
 
 module.exports = router;

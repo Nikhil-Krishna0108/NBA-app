@@ -5,6 +5,9 @@ import C33table from "./C33";
 import C34table from "./C34";
 import TextBox from "./TextBox";
 import Navbar from "./Navbar";
+import NewText1 from "./NewText1";
+import FINAL_TEXT from "./FINAL_TEXT"
+import FinalText_2 from"./FinalText_2"
 
 export const Criteria3 = () => {
   return (
@@ -26,7 +29,9 @@ export const Criteria3 = () => {
         <h4>Course Name: Discrete Mathematics Structures - C204</h4>
         <br />
         <div>
-          <TextBox />
+          <FinalText_2 />
+
+
         </div>
         <br />
         <div>
