@@ -13,6 +13,7 @@ import C52table from './C52';
 import C53table from './C53';
 import C54table from './C54';
 import C55table from './C55';
+import FinalText_2 from "./FinalText_2";
 
 export const Criteria5 = () => {
   return (

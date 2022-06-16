@@ -5,6 +5,7 @@ import TextBox from "./TextBox";
 import C61table from './C61';
 import C62table from './C62';
 import C63table from './C63';
+import FinalText_2 from "./FinalText_2";
 
 export const Criteria6 = () => {
   return (
