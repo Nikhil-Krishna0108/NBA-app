@@ -3,14 +3,18 @@ import C31table from "./C31";
 import C32table from "./C32";
 import C33table from "./C33";
 import C34table from "./C34";
+import Pdf from "react-to-pdf";
 import Navbar from "./Navbar";
-import FinalText_2 from"./FinalText_2"
-// const tn=1
+
+// import FINAL_TEXT from "./FINAL_TEXT"
+import FinalText_2 from "./FinalText_2";
+
 export const Criteria3 = () => {
+  const ref = React.createRef();
   return (
     <div>
       <Navbar />
-      <div className="criteria-one">
+      <div className="criteria-one" ref={ref}>
         <h1 align="center">Criteria 3</h1>
         <br />
         <h3>
@@ -26,18 +30,12 @@ export const Criteria3 = () => {
         <h4>Course Name: Discrete Mathematics Structures - C204</h4>
         <br />
         <div>
-          
-          <FinalText_2 tnum={1}/>
-
-
+          <FinalText_2 tnum={1} />
         </div>
         <br />
         <br />
         <div>
-          
-          <FinalText_2 tnum={2}/>
-
-
+          <FinalText_2 tnum={2} />
         </div>
         <br />
         <div>
@@ -69,6 +67,19 @@ export const Criteria3 = () => {
           <C34table />
         </div>
       </div>
+      <Pdf
+        targetRef={ref}
+        filename="code-example.pdf"
+        x={0.6}
+        y={0.6}
+        scale={0.6}
+      >
+        {({ toPdf }) => (
+          <button className="btn btn-primary btn-l btn-option" onClick={toPdf}>
+            Generate Pdf
+          </button>
+        )}
+      </Pdf>
     </div>
   );
 };

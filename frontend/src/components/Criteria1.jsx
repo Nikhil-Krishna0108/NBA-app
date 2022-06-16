@@ -12,16 +12,11 @@ const Criteria1 = () => {
       <Navbar />
 
       <div className="criteria-one" ref={ref}>
+        <h1>CRITERION 1 Vision, Mission And Program Education Objectives</h1>
 
-      <h1>CRITERION 1 Vision, Mission And Program Education Objectives</h1>
-     
-      
-<br />
+        <br />
         <div>
-          
-          <FinalText_2 tnum={3}/>
-
-
+          <FinalText_2 tnum={3} />
         </div>
         <br />
         <C11table />

@@ -18,9 +18,11 @@ const Options = () => {
         </div>
         <hr />
         <div class="text-center">
-          <button className="btn btn-primary btn-xl btn-option" type="submit">
-            Check/Update Status
-          </button>
+          <NavLink to="/status">
+            <button className="btn btn-primary btn-xl btn-option" type="submit">
+              Check/Update Status
+            </button>
+          </NavLink>
         </div>
       </div>
     </div>

@@ -28,9 +28,8 @@ function Criterias() {
                   <div class="service-content">
                     <h3>CRITERIA 1</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text
+                      This Criteria covers in detail about the Vision, Mission
+                      And Program Education Objectives
                     </p>
                   </div>
                 </div>
@@ -49,9 +48,8 @@ function Criterias() {
                   <div class="service-content">
                     <h3>CRITERIA 2</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text
+                      This Criteria covers in detail about the Program
+                      Curriculum and Teaching-learning process
                     </p>
                   </div>
                 </div>
@@ -69,16 +67,15 @@ function Criterias() {
                   <div class="service-content">
                     <h3>CRITERIA 3</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text
+                      This Criteria covers in detail about the Course Outcomes
+                      And Program Outcomes
                     </p>
                   </div>
                 </div>
               </NavLink>
             </div>
             <div class="col-md-3 col-sm-6">
-              <NavLink to="/criteria1">
+              <NavLink to="/criteria4">
                 <div class="service-box ">
                   <div class="service-icon red">
                     <div class="front-content">
@@ -89,9 +86,8 @@ function Criterias() {
                   <div class="service-content">
                     <h3>CRITERIA 4</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text
+                      This Criteria covers in detail about the Students
+                      Performance
                     </p>
                   </div>
                 </div>
@@ -109,9 +105,8 @@ function Criterias() {
                   <div class="service-content">
                     <h3>CRITERIA 5</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text
+                      This Criteria covers in detail about Faculty Information
+                      and Contribution
                     </p>
                   </div>
                 </div>
@@ -129,9 +124,8 @@ function Criterias() {
                   <div class="service-content">
                     <h3>CRITERIA 6</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text
+                      This Criteria covers in detail about the Facilities And
+                      Technical Support
                     </p>
                   </div>
                 </div>

@@ -1,27 +1,26 @@
 import React from "react";
 import C21table from "./C21";
 import C22table from "./C22";
-import C23table from './C23';
+import C23table from "./C23";
 import C24table from "./C24";
 import C25table from "./C25";
 import C26table from "./C26";
 import C27table from "./C27";
 import Navbar from "./Navbar";
-import TextBox from "./TextBox";
+
 import FinalText_2 from "./FinalText_2";
+import Pdf from "react-to-pdf";
 
 export const Criteria2 = () => {
+  const ref = React.createRef();
   return (
     <div>
       <Navbar />
-      <div className="criteria-one">
-    <h1>CRITERION 2 Program Curriculum and Teaching-learning process</h1> 
-    <br />
+      <div className="criteria-one" ref={ref}>
+        <h1>CRITERION 2 Program Curriculum and Teaching-learning process</h1>
+        <br />
         <div>
-          
-          <FinalText_2 tnum={4}/>
-
-
+          <FinalText_2 tnum={4} />
         </div>
         <br />
         <C21table />
@@ -30,10 +29,7 @@ export const Criteria2 = () => {
         <br />
         <br />
         <div>
-          
-          <FinalText_2 tnum={5}/>
-
-
+          <FinalText_2 tnum={5} />
         </div>
         <C24table />
         <br />
@@ -43,6 +39,19 @@ export const Criteria2 = () => {
         <br />
         <C27table />
       </div>
+      <Pdf
+        targetRef={ref}
+        filename="code-example.pdf"
+        x={0.5}
+        y={0.5}
+        scale={0.3}
+      >
+        {({ toPdf }) => (
+          <button className="btn btn-primary btn-l btn-option" onClick={toPdf}>
+            Generate Pdf
+          </button>
+        )}
+      </Pdf>
     </div>
   );
 };

@@ -103,9 +103,8 @@ const Landing = () => {
                 <div class="service-content">
                   <h3>CRITERIA 1</h3>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text
+                    This Criteria covers in detail about the Vision, Mission And
+                    Program Education Objectives
                   </p>
                 </div>
               </div>
@@ -121,9 +120,8 @@ const Landing = () => {
                 <div class="service-content">
                   <h3>CRITERIA 2</h3>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text
+                    This Criteria covers in detail about the Program Curriculum
+                    and Teaching-learning process
                   </p>
                 </div>
               </div>
@@ -139,9 +137,8 @@ const Landing = () => {
                 <div class="service-content">
                   <h3>CRITERIA 3</h3>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text
+                    This Criteria covers in detail about the Course Outcomes And
+                    Program Outcomes
                   </p>
                 </div>
               </div>
@@ -157,9 +154,76 @@ const Landing = () => {
                 <div class="service-content">
                   <h3>CRITERIA 4</h3>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text
+                    This Criteria covers in detail about the Students
+                    Performance
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="service-box ">
+                <div class="service-icon red">
+                  <div class="front-content">
+                    <i class="fa fa-suitcase"></i>
+                    <h2>CRITERIA 5</h2>
+                  </div>
+                </div>
+                <div class="service-content">
+                  <h3>CRITERIA 5</h3>
+                  <p>
+                    This Criteria covers in detail about Faculty Information and
+                    Contribution
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="service-box ">
+                <div class="service-icon red">
+                  <div class="front-content">
+                    <i class="fa fa-suitcase"></i>
+                    <h2>CRITERIA 6</h2>
+                  </div>
+                </div>
+                <div class="service-content">
+                  <h3>CRITERIA 6</h3>
+                  <p>
+                    This Criteria covers in detail about the Facilities And
+                    Technical Support
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="service-box ">
+                <div class="service-icon red">
+                  <div class="front-content">
+                    <i class="fa fa-suitcase"></i>
+                    <h2>CRITERIA 7</h2>
+                  </div>
+                </div>
+                <div class="service-content">
+                  <h3>CRITERIA 7</h3>
+                  <p>
+                    This Criteria involves details regarding the Continuous
+                    Improvement being done
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="service-box ">
+                <div class="service-icon red">
+                  <div class="front-content">
+                    <i class="fa fa-suitcase"></i>
+                    <h2>CRITERIA 8</h2>
+                  </div>
+                </div>
+                <div class="service-content">
+                  <h3>CRITERIA 8</h3>
+                  <p>
+                    This Criteria contains detailed information and records of
+                    First Year Academics
                   </p>
                 </div>
               </div>

@@ -17,6 +17,7 @@ import { Criteria6 } from "./components/Criteria6";
 // import Navbar from './components/Navbar';
 import Options from "./components/Options";
 import Criterias from "./components/Criterias";
+import Status from "./components/Status";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/user" element={<Options />} />
         <Route path="/dashboard" element={<Criterias />} />
+        <Route path="/status" element={<Status />} />
 
         <Route path="/criteria1" element={<Criteria1 />} />
         <Route path="/criteria2" element={<Criteria2 />} />
