@@ -5,12 +5,14 @@ import C33table from "./C33";
 import C34table from "./C34";
 import TextBox from "./TextBox";
 import Navbar from "./Navbar";
+import Pdf from "react-to-pdf";
 
 export const Criteria4 = () => {
+  const ref = React.createRef();
   return (
     <div>
       <Navbar />
-      <div className="criteria-one">
+      <div className="criteria-one" ref={ref}>
         <h1 align="center">Criteria 3</h1>
         <br />
         <h3>
@@ -58,6 +60,19 @@ export const Criteria4 = () => {
           <C34table />
         </div>
       </div>
+      <Pdf
+        targetRef={ref}
+        filename="code-example.pdf"
+        x={0.6}
+        y={0.6}
+        scale={0.6}
+      >
+        {({ toPdf }) => (
+          <button className="btn btn-primary btn-l btn-option" onClick={toPdf}>
+            Generate Pdf
+          </button>
+        )}
+      </Pdf>
     </div>
   );
 };
