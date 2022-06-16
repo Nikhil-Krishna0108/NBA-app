@@ -72,7 +72,7 @@ function C31table() {
               // console.log({tableData.id});
 
               axios.post(
-                `http://localhost:5000/criteria3/c31/update/${oldRow._id}`,
+                `http://localhost:5000/criteria3/c31/update/${oldRow._id}`, 
                 newRow
               );
             });

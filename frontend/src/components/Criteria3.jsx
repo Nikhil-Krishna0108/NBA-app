@@ -8,7 +8,7 @@ import Navbar from "./Navbar";
 import NewText1 from "./NewText1";
 import FINAL_TEXT from "./FINAL_TEXT"
 import FinalText_2 from"./FinalText_2"
-
+const tn=1
 export const Criteria3 = () => {
   return (
     <div>
@@ -29,7 +29,8 @@ export const Criteria3 = () => {
         <h4>Course Name: Discrete Mathematics Structures - C204</h4>
         <br />
         <div>
-          <FinalText_2 />
+          
+          <FinalText_2 tnum={tn}/>
 
 
         </div>

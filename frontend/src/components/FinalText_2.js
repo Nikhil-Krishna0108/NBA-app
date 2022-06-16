@@ -6,7 +6,7 @@ import axios from 'axios';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './FINAL_TEXT.css';
-const FinalText_2 = () => {
+const FinalText_2 = (props) => {
    // const a='{"blocks":[{"key":"dhev8","text":"ASD","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}'
          // const content  = convertFromRaw(JSON.parse(a));
 //   const [editorState, setEditorState] = useState(
@@ -14,7 +14,8 @@ const FinalText_2 = () => {
 //   );
 const [editorState, setEditorState] = useState();
 const[axiosdata,setAxiosData] = useState()
-
+const tnum=props.tnum
+console.log("TNUM IS",tnum)
  
   const handleEditorChange = (state) => {
     //   console.log(this.state)
@@ -25,11 +26,11 @@ const[axiosdata,setAxiosData] = useState()
  
   const sendData=()=>{
 
-    const tnum="1"
+    // const tnum="1"
     try {
         var contentState = editorState.getCurrentContent();
         const rawState = JSON.stringify(convertToRaw(contentState))
-       axios.post('http://localhost:5000/criteria3/text1/add/1',{content: rawState, _id:tnum}) 
+       axios.post(`http://localhost:5000/criteria3/text1/add/${tnum}`,{content: rawState, _id:tnum}) 
 //     var fs = require('fs');
 //     fs.writeFileSync("/c3t1_json.json", rawState, function(err) {
 //     if (err) {
@@ -49,7 +50,7 @@ const[axiosdata,setAxiosData] = useState()
 const getData=async()=>{
     try{
         await axios
-      .get("http://localhost:5000/criteria3/text1/display/1")
+      .get(`http://localhost:5000/criteria3/text1/display/${tnum}`)
       .then((response) => response.data)
       .then((data) => {
         
