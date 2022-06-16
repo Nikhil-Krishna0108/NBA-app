@@ -20,12 +20,11 @@ export const Criteria5 = () => {
     <div>
       <Navbar />
       <div className="criteria-one">
-    <h1>CRITERION 5 Faculty Information and contribution</h1> 
-        <TextBox />
+        <h1>CRITERION 5 Faculty Information and contribution</h1>
         <h4>Student-Faculty Ratio(SFR)</h4>
         <div>
-          
-          <FinalText_2 tnum={2}/>
+
+          <FinalText_2 tnum={2} />
 
 
         </div>
@@ -40,8 +39,8 @@ export const Criteria5 = () => {
         <br />
         <h4>Innovations by faculty in teaching learning</h4>
         <div>
-          
-          <FinalText_2 tnum={3}/>
+
+          <FinalText_2 tnum={3} />
 
 
         </div>

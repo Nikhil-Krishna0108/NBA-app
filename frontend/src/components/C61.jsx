@@ -128,7 +128,6 @@ function C61table() {
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
           headerStyle: { background: "#007bff", color: "#fff" },
         }}
-        title="PEO – Mission Correlation"
         icons={{ Add: () => <AddIcon /> }}
       />
     </div>
