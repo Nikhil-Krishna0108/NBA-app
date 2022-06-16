@@ -1,18 +1,7 @@
 import React from "react";
-import C21table from "./C21";
-import C22table from "./C22";
 // import C23table from './C23';
-import C24table from "./C24";
-import C25table from "./C25";
-import C26table from "./C26";
-import C27table from "./C27";
 import Navbar from "./Navbar";
 import TextBox from "./TextBox";
-import C51table from './C51';
-import C52table from './C52';
-import C53table from './C53';
-import C54table from './C54';
-import C55table from './C55';
 import C61table from './C61';
 import C62table from './C62';
 import C63table from './C63';
@@ -22,12 +11,23 @@ export const Criteria6 = () => {
     <div>
       <Navbar />
       <div className="criteria-one">
-    <h1>CRITERION 2 Program Curriculum and Teaching-learning process</h1> 
+        <h1>CRITERION 6 Facilities and technical support</h1>
         <TextBox />
+        <h4>Adequate well equipped laboratories with manpower</h4>
         <C61table />
         <br />
+        <h4>Additional facilities created for improving the quality of learning experience</h4>
         <C62table />
         <br />
+        <h4>Laboratories: Maintenance overall</h4>
+        <div>
+          
+          <FinalText_2 tnum={3}/>
+
+
+        </div>
+        <br />
+        <h4>Safety measures in laboratories</h4>
         <C63table />
 
       </div>

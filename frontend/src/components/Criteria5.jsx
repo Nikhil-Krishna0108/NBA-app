@@ -19,19 +19,38 @@ export const Criteria5 = () => {
     <div>
       <Navbar />
       <div className="criteria-one">
-    <h1>CRITERION 2 Program Curriculum and Teaching-learning process</h1> 
+    <h1>CRITERION 5 Faculty Information and contribution</h1> 
         <TextBox />
+        <h4>Student-Faculty Ratio(SFR)</h4>
+        <div>
+          
+          <FinalText_2 tnum={3}/>
+
+
+        </div>
+        <br />
+        <h4>Faculty cadre proportion</h4>
         <C51table />
         <br />
         <C52table />
         <br />
+        <h4>Faculty Qualification</h4>
         <C53table />
         <br />
+        <h4>Innovations by faculty in teaching learning</h4>
+        <div>
+          
+          <FinalText_2 tnum={3}/>
+
+
+        </div>
+        <br />
+        <h4>Faculty as participants in Faculty development</h4>
         <C54table />
         <br />
+        <h4>Research and development</h4>
         <C55table />
         <br />
-        <C26table />
       </div>
     </div>
   );
