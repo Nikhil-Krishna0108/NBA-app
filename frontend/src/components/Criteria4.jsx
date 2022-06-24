@@ -1,63 +1,77 @@
 import React from "react";
-import C31table from "./C31";
-import C32table from "./C32";
-import C33table from "./C33";
-import C34table from "./C34";
-import TextBox from "./TextBox";
+import C41table from "./C41";
+import C42table from "./C42";
+import C43table from "./C43";
+import C44table from "./C44";
+import C45table from "./C45";
+import C46table from "./C46";
 import Navbar from "./Navbar";
 import Pdf from "react-to-pdf";
+import FinalText_2 from "./FinalText_2";
 
 export const Criteria4 = () => {
   const ref = React.createRef();
   return (
     <div>
       <Navbar />
-      <div className="criteria-one" ref={ref}>
-        <h1 align="center">Criteria 3</h1>
+      <div className="criteria-four" ref={ref}>
+        <h1 align="center">Criteria 4</h1>
         <br />
-        <h3>
-          3.1 Establish the Correlation between the courses and the Program
-          Outcome and Program Specific Outcomes (PSOs) (20)
-        </h3>
         <br />
-        <h3>
-          3.1.1 Course Outcomes (COs).Course Outcomes of all the subjects from
-          3rd to 8thsemester.(05)
-        </h3>
-        <br />
-        <h4>Course Name: Discrete Mathematics Structures - C204</h4>
-        <br />
+        <h4>
+        Student Performance
+        </h4>
         <div>
-          <TextBox />
+          <p>
+            N : Sanctioned Intake of the program. <br/>
+            N1 : Total number of students admitted in first year minus number of students migrated to other programs/institutions plus number of students migrated to this program.<br/>
+            N2 : Number of students admitted in 2nd year for the same batch through lateral entry.<br/>
+            N3 : Separate division of students if applicable.<br/>
+          </p>
+          <C41table />
         </div>
         <br />
+        <br />
         <div>
-          <C31table />
+          <p>
+            Number of students who graduated successfully without backlogs:
+          </p>
+          <C42table />
         </div>
         <br />
-        <h4>Course Name: GRAPH THEORY AND COMBINATORICS - C210</h4>
-        <br />
-
+        <h4>
+          Success rate calculation in the program
+        </h4>
         <div>
-          <C32table />
+          <FinalText_2 tnum={10} />
+        </div>
+        <br />        
+        <h4>
+          Professional Activities
+        </h4>
+        <div>
+          <C43table />
         </div>
         <br />
-        <h4>Course Name: SYSTEM SOFTWARE - C302</h4>
-        <br />
-
+        <h4>
+          Publication of technical magazines, Newsletters
+        </h4> 
         <div>
-          <C33table />
+          <C44table />
         </div>
         <br />
-        <h3>
-          3.1.2 CO-PO matrices of courses selected in 3.1.1 for three batches
-          namely 2010-14 batch, 2011-14 batch and 2012-16 batch (05)
-        </h3>
-        <br />
-        <h4>Course Name: Discrete Mathematics Structures - C204</h4>
-        <br />
+        <h4>
+          Participation in inter-institution events by students in program of study
+        </h4>
         <div>
-          <C34table />
+          <C45table />
+        </div>
+        <br/>
+        <h4>
+          Students pursuing PH.D.
+        </h4>
+        <div>
+          <C46table />
         </div>
       </div>
       <Pdf

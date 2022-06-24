@@ -4,16 +4,18 @@ import MaterialTable from "material-table";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import AddIcon from "@material-ui/icons/Add";
 
-function C52table() {
+function C45table() {
   const [tableData, setTableData] = useState([]);
   const columns = [
-    { title: "Year", field: "year", filterPlaceholder: "filter" },
-    { title: "Professors", field: "professors", filterPlaceholder: "filter" },
-    { title: "Associate professors", field: "associate_professors", filterPlaceholder: "filter" },
-    { title: "Assistant professors", field: "assistant_professors", filterPlaceholder: "filter" },
+    { title: "Name", field: "name", filterPlaceholder: "filter" },
+    { title: "College", field: "college", filterPlaceholder: "filter" },
+    { title: "Conference", field: "conference", filterPlaceholder: "filter" },
+    { title: "Level", field: "level", filterPlaceholder: "filter" },
+    { title: "Title", field: "title", filterPlaceholder: "filter" },
+    { title: "Year", field: "years", filterPlaceholder: "filter" },
   ];
   // axios
-  // .get("http://localhost:5000criteria5/criteria5/c52/")
+  // .get("http://localhost:5000criteria4/c45/")
   // .then((response) => {
   //   this.setState({ tableData: response.data });
   //   console.log(tableData);
@@ -23,7 +25,7 @@ function C52table() {
   // });
   function getEvents() {
     axios
-      .get("http://localhost:5000/criteria5/c52/")
+      .get("http://localhost:5000/criteria4/c45/")
       .then((response) => response.data)
       .then((data) => {
         setTableData(data);
@@ -44,7 +46,7 @@ function C52table() {
             new Promise((resolve, reject) => {
               setTableData([...tableData, newRow]);
               axios
-                .post("http://localhost:5000/criteria5/c52/add", newRow)
+                .post("http://localhost:5000/criteria4/c45/add", newRow)
                 .then((res) => console.log(res.data));
 
               setTimeout(() => resolve(), 500);
@@ -66,7 +68,7 @@ function C52table() {
               // console.log({tableData.id});
 
               axios.post(
-                `http://localhost:5000/criteria5/c52/update/${oldRow._id}`,
+                `http://localhost:5000/criteria4/c45/update/${oldRow._id}`,
                 newRow
               );
             });
@@ -80,7 +82,7 @@ function C52table() {
               setTimeout(() => resolve(), 1000);
 
               axios.delete(
-                `http://localhost:5000/criteria5/c52/delete/${selectedRow._id}`
+                `http://localhost:5000/criteria4/c45/delete/${selectedRow._id}`
               );
             }),
         }}
@@ -125,10 +127,11 @@ function C52table() {
           headerStyle: { background: "#007bff", color: "#fff" },
         }}
         title = ""
+
         icons={{ Add: () => <AddIcon /> }}
       />
     </div>
   );
 }
 
-export default C52table;
+export default C45table;

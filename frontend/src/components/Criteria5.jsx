@@ -24,7 +24,6 @@ export const Criteria5 = () => {
       <Navbar />
       <div className="criteria-one" ref={ref}>
         <h1>CRITERION 5 Faculty Information and contribution</h1>
-        <TextBox />
         <h4>Student-Faculty Ratio(SFR)</h4>
         <div>
           <FinalText_2 tnum={2} />
