@@ -17,7 +17,8 @@ export const Criteria2 = () => {
     <div>
       <Navbar />
       <div className="criteria-one" ref={ref}>
-        <h1>CRITERION 2 Program Curriculum and Teaching-learning process</h1>
+        <h1 align="center">CRITERION 2 </h1>
+        <h3 align="center">Program Curriculum and Teaching-learning process</h3>
         <br />
         <div>
           <FinalText_2 tnum={4} />
@@ -31,6 +32,7 @@ export const Criteria2 = () => {
         <div>
           <FinalText_2 tnum={5} />
         </div>
+        <br />
         <C24table />
         <br />
         <C25table />

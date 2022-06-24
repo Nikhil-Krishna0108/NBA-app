@@ -15,8 +15,10 @@ export const Criteria6 = () => {
     <div>
       <Navbar />
       <div className="criteria-one" ref={ref}>
-        <h1>CRITERION 6 Facilities and technical support</h1>
-        <TextBox />
+        <h1 align="center">CRITERION 6 </h1>
+        <br />
+        <h2 align="center">Facilities and technical support</h2>
+        <TextBox /> <br />
         <h4>Adequate well equipped laboratories with manpower</h4>
         <C61table />
         <br />
